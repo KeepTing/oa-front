@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class='baseMain'>
+  <view class='title'>基础应用</view>
+  <view class='content'>
+    <view class='flex-item'>任务</view>
+    <view class='flex-item'>日程</view>
+    <view class='flex-item'>汇报</view>
+    <view class='flex-item'>考勤</view>
+    <view class='flex-item'>公告</view>
+    <view class='flex-item'>审批</view>
+    <view class='flex-item'>客户管理</view>
+    <view class='flex-item'>+</view>   
+  </view>
+
+
+</view>
+

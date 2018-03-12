@@ -1,0 +1,11 @@
+<view class="section box">
+      <text class="section__title">手机号:</text>
+      <input name="mobile" placeholder="请输入手机号..." bindblur="mobileInputEvent" />
+</view>
+<view class="section box">
+      <text class="section__title">短信验证码:</text>
+      <view class="verify-code">
+        <input name="verifyCode" placeholder="请输入验证码..." />
+        <button bindtap="verifyCodeEvent" size="mini" type="default" disabled="{{buttonDisable}}">{{verifyCodeTime}}</button>
+      </view>
+</view>

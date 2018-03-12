@@ -1,0 +1,100 @@
+page{
+  background-color: #fefefe;
+}
+.head {
+  padding: 20px 0px;
+    background-size: cover;
+    overflow: hidden;
+    text-align: center;
+}
+.bigtitle{
+  font-size: 40px;
+  font-weight: 200;
+  color:#279bee;
+  padding: 5px 0px;
+}
+.smalltitle{
+  color: #000000;
+  font-size: 13px;
+     
+}
+.head-logo {
+       width: 60%;
+       height: 50%;
+       margin: 10% auto;
+       background-size:100% 100%; 
+        display: block;
+}
+/*main*/
+.main {
+    width: 84%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.form-cl {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-bottom: 1px solid #b1b1b1;
+}
+.form-cl input {
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    height: 30px;
+    border: 0;
+    outline: 0;
+    padding: 5px 0px 5px 0px;
+}
+.form-cl ,input {
+    background-color:#fefefe;
+}
+/*按钮公共样式*/
+.error-wrap {
+    padding: 6px 0;
+    height: 32px;
+    
+}
+ .btn {
+    border-radius: 3px;
+    color: #fff;
+    font-family: "Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","\5B8B\4F53","Microsoft Yahei",sans-serif;
+    text-align: center;
+}
+.ctrl{
+  margin-top: 30px;
+}
+.btn:hover {
+    background-color: #55aff5;
+    cursor: pointer;
+}
+.btn {
+	  display:block;
+    width: 100%;
+    height: 36px;
+    line-height:36px;
+    background-color: #279bee;
+    cursor: pointer; 
+    border: none;
+    font-size: 14px;
+    text-decoration: none;
+}
+.orl{
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 30px;
+  color: #76c5f1; 
+}
+
+/*尾部*/
+.fot {
+  width:84%;
+  position: fixed;
+  bottom: 0;
+	border-top: 1px solid #e6e6e6;
+	padding: 10px 0px;
+  text-align: center;
+  font-size: 12px;
+  font-family: "Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","\5B8B\4F53","Microsoft Yahei",sans-serif;
+}
+

@@ -1,0 +1,31 @@
+/**index.wxss**/
+.baseMain{
+  width: 100%;
+  border: 1px salmon solid;
+  padding: 10px 0px;
+}
+.baseMain>.title{
+  border-left: 4px solid #4c91ff;
+  padding: 0px 5px;
+  height: 13px;
+  line-height: 13px;
+  font-size: 13px;
+  color: #4c91ff;
+  margin-bottom: 10px;
+}
+.baseMain >.content{
+   display: flex;
+   flex-wrap:wrap;
+   margin: 0 auto;
+   justify-content: center;
+}
+.flex-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24%;
+  border:1px black solid;
+  border-left:none; 
+  
+}
+
