@@ -1,0 +1,36 @@
+/* pages/advise/advise.wxss */
+.box{
+  width: 100%;
+  padding: 8px 0px;
+  border-bottom: 1px solid #f9f9f9;
+  background-color:white; 
+}
+.box span{
+  width: 15%;
+  display: inline-block;
+  text-align: center;
+}
+.all-text{
+  display: inline-block;
+  margin-left:10px;
+  margin-top: 0px;
+}
+.name{
+  font-size: 15px;
+  padding: 2px;
+}
+.topic{
+  font-size: 12px;
+  color: #909090;
+}
+.pot{
+  width: 15%;
+  display: inline-block;
+ 
+  float: right;
+  font-size: 12px;
+  color: #b1b1b1;
+}
+.c-black{
+  color: black;
+}

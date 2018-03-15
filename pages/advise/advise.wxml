@@ -1,0 +1,29 @@
+<!--pages/advise/advise.wxml-->
+<view class='box'>
+  <view class='content'>
+    <navigator class='box' url="/pages/advise/advise?title=公告通知">
+    <span class="c-yellow iconprofile"></span>
+    <view class='all-text'>
+      <view class='name'>
+      姓名
+      <text  class="topic">批注</text>
+      </view>
+      <view class='topic c-black'>通知标题</view>
+    </view>
+    <text class="pot">3-9</text>
+  </navigator>
+  <navigator class='box' url="/pages/advise/advise?title=公告通知">
+    <span class="c-yellow iconprofile"></span>
+    <view class='all-text'>
+      <view class='name'>
+      王笑笑
+      <text  class="topic">批准了审批申请</text>
+      </view>
+      <view class='topic c-black'>加班</view>
+    </view>
+    <text class="pot">3-9</text>
+  </navigator>
+
+  </view>
+</view>
+

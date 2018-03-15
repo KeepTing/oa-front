@@ -1,0 +1,28 @@
+<!--pages/taskItems/taskItems.wxml-->
+<!--导航条-->  
+<view class="navbar">  
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+
+</view>  
+  <text></text>
+<!--进行中-->  
+<view hidden="{{currentTab!==0}}">  
+<view class='spilt'></view>
+  <view class='content'>
+    <navigator wx:for="{{taskInfo}}" class='box' bindtap='taskDetailClick'>
+      <view class='all-text'>
+        <view class='adbig-title'>{{item.title}}</view>
+        <view class='adsmall-title c-red'>
+          {{item.dateTime}} 
+          <text>截至</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>  
+  
+<!--已完成-->  
+<view hidden="{{currentTab!==1}}">  
+  tab_02  
+</view>  
+ 

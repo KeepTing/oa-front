@@ -1,0 +1,25 @@
+/* pages/task/task.wxss */
+page{
+  background-color: #f9f9f9;
+}
+
+.box{
+  width: 100%;
+  padding: 10px 0px;
+  border-bottom: 1px solid #f9f9f9;
+  background-color:white; 
+
+}
+.box span{
+  display: inline-block;
+  margin: 0px 15px;
+  font-size: 18px;
+}
+.box text{
+  margin-left: 10px;
+}
+.box .pot{
+  float: right;
+  font-size: 15px;
+  color: #b1b1b1;
+}
