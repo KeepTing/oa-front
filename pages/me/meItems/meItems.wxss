@@ -1,0 +1,66 @@
+/* pages/me/meItems/meItems.wxss */
+page{
+  background-color: #f9f9f9;
+}
+.top{
+  width: 100%;
+  border-bottom: 1px solid #f9f9f9;
+  display: flex;
+  padding: 10px 0px;
+  background-color: #ffffff;
+}
+.img{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  border-radius: 50%;
+}
+.img image{
+  width: 80%;
+  border-radius: 50%;
+}
+.info{
+  width:60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 10px;
+}
+.info .name{
+  font-size: 18px;
+  font-family: "宋体";
+  padding: 5px 0px;
+}
+.info .post{
+  font-size: 14px;
+  color: #b1b1b1;
+}
+.addDirectory{
+  width:13%;
+  font-size: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #b1b1b1;
+}
+.box{
+  width: 100%;
+  padding: 10px 0px;
+  border-bottom: 1px solid #f9f9f9;
+  background-color:white; 
+
+}
+.box span{
+  display: inline-block;
+  margin: 0px 15px;
+  font-size: 18px;
+}
+.box text{
+  margin-left: 10px;
+}
+.box .pot{
+  float: right;
+  font-size: 15px;
+  color: #b1b1b1;
+}

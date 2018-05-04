@@ -1,0 +1,19 @@
+<!--pages/comment/comment.wxml-->
+<view class='main'>
+<view class='content'>
+<textarea placeholder='请输入评论...'>
+</textarea>
+<view class='upimg'>
+<image mode='aspectFill' value="{{tempFilePaths }}" src="{{tempFilePaths }}"></image>
+<view class='file' hidden=''>文件.txt</view>
+</view>
+</view>
+</view>
+<!--底部导航-->
+<view class='bottom-nav'>
+  <image  bindtap="chooseimage" src='/pages/img/phone-icon.jpg'></image>
+  <view class='c-spilt'></view>
+  <image src='/pages/img/fj-icon.png'></image>
+  <view class='c-spilt'></view>
+  <image class='right'  bindtap="send" src='/pages/img/compropago.png'></image>
+</view>

@@ -1,0 +1,98 @@
+<!--pages/task/addTask/addTask.wxml-->
+<view class='main' >
+<form  bindsubmit="formSubmit" bindreset="formReset">   
+  <view class='spilt'></view>
+  <view class='box'>
+    <text class="c-gray iconcheckbox-checked"></text>
+    <text class='title'>任务名称</text>
+     <input name='t_title' />
+  </view>
+  <view class='spilt'></view>
+  <view class='box'>
+    <text class="c-gray iconuser-tie"></text>
+    <text class='title'>负责人</text>
+     <input name='taskToUser' />
+    <view bindtap='clickto'> <text class='btnstaff iconplex'></text></view>
+  </view>
+  
+  <view class='spilt'></view>
+  <view class='box'>
+    <text class="c-gray iconbookmarks"></text>
+    <text class='title'>优先级</text>
+    <picker name='type' class='date'  bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      {{array[index]}}
+    </view>
+  </picker>
+  </view>
+   <view class='box'>
+    <text class="c-gray iconalarm"></text>
+    <text class='title'>截至时间</text>
+    <picker name='endTime' mode="date" class='date' value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker>
+  </view>
+  <view class='spilt'></view>
+  <view class='box'>
+  
+    <textarea name='t_desc' placeholder="任务描述" value=''  />
+  </view>
+ 
+     <!--选择图片，预览图片-->
+        <view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                  <view class="weui-uploader__title">点击可预览选好的图片</view>
+                  <view class="weui-uploader__info">{{imageList.length}}/{{count[countIndex]}}</view>
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{imageList}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+
+      </view>
+  </view>
+  <input hidden='hidden' name="t_toid" value='{{idList}}'></input>
+  <input hidden='hidden' name="t_imgFile" value='{{imgUrl}}' maxlength='500'></input>
+  <input hidden='hidden' name="t_voiceFile" value='{{voice}}' maxlength='500'></input>
+ <view class="weui-cells record" hidden="{{currentTab!==0}}">
+ <view style='padding:5px;'>
+    <view class="weui-uploader__title">点击可播放录音</view>
+  <view class='recordtitle'>
+  {{voiceUrl}}
+  </view>
+  <image src='/image/pause.png' bindtap="play"> </image>
+  <image  src='/image/trash.png'  bindtap="deleteVoice"  hidden="{{currentTab!==0}}"></image>
+  </view>
+</view> 
+   <view class='spilt'>
+    
+   </view>
+   <view class='spilt'></view>
+   <button class='btn btn-size' formType="submit">提交</button> 
+   <view class='spilt'></view>   
+</form>
+</view>
+<!--底部导航-->
+<view class='bottom-nav'>
+   <image src='{{vsrc}}'  bindtouchstart="startRecode" bindtouchend="endRecode"></image>
+  <view class='c-spilt'></view>
+</view>
+
+
+
+

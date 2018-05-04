@@ -44,24 +44,12 @@ textarea{
 .btn-size{
   width: 80%;
 }
-.bottom-nav{
-  height: 40px;
-  width: 100%;
-  position: fixed;
-  bottom: 0px;
-  border-top:1px solid #f9f9f9;
-  background-color: #fff;
-}
+
 .bottom-nav image{
   width: 48px;
   height: 100%;
 }
-.c-spilt{
-  display: inline-block;
-  width: 2px;
-  height: 90%;
-  background-color: #f9f9f9;
-}
+
 /* 选择成功后的图片显示样式 */
 .imgBoxs{
   width: 100%;

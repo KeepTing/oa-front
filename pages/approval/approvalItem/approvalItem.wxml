@@ -1,0 +1,7 @@
+<!--pages/approval/approvalItem/approvalItem.wxml-->
+<view class='box'>
+  <view  wx:for='{{info}}' bindtap='clickto' data-title='{{item.title}}'>
+    <text class='title'>{{item.title}}</text><text class='icons iconplex'></text>
+  </view>
+</view>
+

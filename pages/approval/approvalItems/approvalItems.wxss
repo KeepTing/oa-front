@@ -1,0 +1,98 @@
+/* pages/approval/approvalItems/approvalItems.wxss */
+page{  
+  display: flex;  
+  flex-direction: column;  
+  height: 100%;  
+  background-color: #f9f9f9;
+  padding: 0px;
+  margin:-1px;
+}  
+.add{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height:50px;
+  border-radius: 50%;
+  background: #515e66;
+  color: #ffffff;
+  line-height: 50px;
+  text-align:center;
+  font-size: 24px;
+}
+
+
+
+
+.navbar{  
+  flex: none;  
+  display: flex;  
+  background: #515e66; 
+  width: 100%; 
+}  
+.navbar .item{  
+  width: 100%;
+  position: relative;  
+  flex: auto;  
+  text-align: center;  
+  line-height:40px;  
+  color:#919ba4;
+}  
+.navbar .item.active{  
+  color: #ffffff;  
+}  
+.navbar .item.active:after{  
+  content: "";  
+  display: block;  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  height: 4rpx;  
+  background: #ffffff;  
+}  
+/* tab0 */
+.box{
+  width: 100%;
+  border-bottom: 1px solid #f9f9f9;
+  background-color:white; 
+  display: flex;
+  padding: 10px 0px;
+}
+.r-img{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100%;
+}
+.r-img image{
+  width: 60%;
+  border-radius:50%; 
+}
+.all-text{
+  display: inline-block;
+  width: 80%;
+}
+.all-text text{
+  display: inline-block;
+}
+.r-name{
+  width: 30%;
+}
+.r-date{
+  width:68%;
+  font-size: 12px;
+  color: #909090;
+  text-align: right;
+}
+.r-cu{
+  font-weight: bold;
+  margin: 3px 0px;
+}
+/*设置超出2行，出现省略号*/
+.r-content{
+  width: 94%;
+  font-size: 16px;
+}

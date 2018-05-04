@@ -1,0 +1,57 @@
+/* pages/report/reportItems/reportItems.wxss */
+.box{
+  width: 100%;
+  border-bottom: 1px solid #f9f9f9;
+  background-color:white; 
+  display: flex;
+  padding: 10px;
+}
+.r-img{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100%;
+}
+.r-img image{
+  width: 60%;
+}
+.all-text{
+  display: inline-block;
+  width: 80%;
+}
+.all-text text{
+  display: inline-block;
+}
+.r-name{
+  width: 20%;
+}
+.r-topic{
+  width: 20%;
+  font-size: 12px;
+  color: #909090;
+}
+.r-date{
+  width:54%;
+  font-size: 12px;
+  color: #909090;
+  text-align: right;
+}
+.r-cu{
+  font-weight: bold;
+  margin: 3px 0px;
+}
+/*设置超出2行，出现省略号*/
+.r-content{
+  width: 94%;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 32rpx;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+}
+
+

@@ -1,5 +1,6 @@
 //app.js
 import wxValidate from 'utils/wxValidate'
+
 App({
   //表单验证插件
   wxValidate: (rules, messages) => new wxValidate(rules, messages),
@@ -37,6 +38,10 @@ App({
     })
   },
   globalData: {
-    userInfo: null
-  }
+    userInfo: null,
+    host:"http://192.168.0.145:8080",  //服务器host
+    qiniuHost:"http://p81iiyqk5.bkt.clouddn.com/",  //七牛云host
+    header: { 'Cookie': '' }
+  },
 })
+

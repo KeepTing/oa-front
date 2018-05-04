@@ -1,0 +1,14 @@
+<!--pages/dept/dept/dept.wxml-->
+  <label class="radio" bindtap='selectAll' >
+    <radio  value="{{select}}" checked="{{selectcheck}}"/>{{select}}
+  </label>
+<view class='boxcheck' wx:for="{{items}}" >
+
+  <label  class="checkbox">
+
+      <text class='tx'>{{item.d_name}}</text>
+      <text class='name'>{{item.d_name}}</text>
+     
+  </label>
+ <text class='btnstaff iconplex' data-check='{{item.id}}' bindtap='clicktostaff'></text>
+</view>

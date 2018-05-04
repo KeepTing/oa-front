@@ -1,4 +1,6 @@
 //实例化app
+var header = getApp().globalData.header; //获取app.js中的请求头
+var host = getApp().globalData.host;
 var appInstance = getApp()
 Page({
   /* 页面的初始数据*/
@@ -6,7 +8,7 @@ Page({
   },
   formsubmit: function (e) {
     console.log(e);
-    if (e.detail.value.phoneNum.length == 0 ||e.detail.value.phoneNum.length == 0) {
+    if (e.detail.value.phone.length == 0 || e.detail.value.password.length == 0) {
       wx.showToast({
         title: '帐号不存在请重新登录！',
         icon: 'none',
@@ -14,39 +16,55 @@ Page({
       })
     } else {
       var that = this
+      wx.setStorage({
+        key: "phone",
+        data: e.detail.value.phone
+      })
+
+
+
+      var loginForm = e.detail.value;
+
       //验证手机号
       wx.request({
-        url: 'localhost:8080/user/login',
-        data: {
-          phoneNum: e.detail.value.phoneNum,
-          pwd: e.detail.value.pwd
-        },
-        header: {
-          'content-type': 'application/json'
-        },
+        url: host+'/user/login',
+        data:loginForm,
+        header:header,
+        dataType:"json",
+        method: 'POST',
         success: function (res) {
           console.log(res.data)
-          let status = res.data.status;
-          if (status == 1) {
-            console.log('登录成功')
+          var result=res.data+"";
+          if (result == "false") {
             wx.showToast({
-              title: '成功',
+              icon:'none',
+              title: '用户名或密码错误',
+            })
+          }
+          else {
+            console.log('登录成功')
+             getApp().globalData.header.Cookie = 'JSESSIONID=' + res.data.sessionId;
+            // console.log("======"+res.data.sessionId)
+            wx.showToast({
+              title: '登录成功',
               icon: 'success',
               duration: 2000,
               success: function () {
                 console.log('haha');
                 setTimeout(function () {
                   //要延时执行的代码
+                  wx.setStorage({
+                    key: 'user',
+                    data: res.data.user,
+                  })
                   wx.switchTab({
                     url: "../index/index"
                   })
                 }, 2000) //延迟时间 
               }
             })
-
-
           }
-          if (status == 0) {
+          if (res.data == "false") {
             console.log('失败');
             wx.showToast({
               title: '帐号不存在请重新登录！',
@@ -56,14 +74,14 @@ Page({
           }
 
           that.setData({ 
-            phoneNum: e.detail.value.phoneNum,
-            pwd: e.detail.value.pwd
+            phone: e.detail.value.phone,
+            password: e.detail.value.password
           });
         }
       });
      
     }
-  if(e.detail.value.pwd.length == 0) {
+  if(e.detail.value.password.length == 0) {
     wx.showToast({
       title: '密码不为空！',
       icon: 'none',

@@ -1,11 +1,6 @@
-<view class="section box">
-      <text class="section__title">手机号:</text>
-      <input name="mobile" placeholder="请输入手机号..." bindblur="mobileInputEvent" />
-</view>
-<view class="section box">
-      <text class="section__title">短信验证码:</text>
-      <view class="verify-code">
-        <input name="verifyCode" placeholder="请输入验证码..." />
-        <button bindtap="verifyCodeEvent" size="mini" type="default" disabled="{{buttonDisable}}">{{verifyCodeTime}}</button>
-      </view>
-</view>
+<!-- <button bindtap="start" class='btn'>开始录音</button>
+<button bindtap="pause" class='btn'>暂停录音</button>
+<button bindtap="stop" class='btn'>停止录音</button> -->
+<button type="primary" bindtouchstart="startRecode" bindtouchend="endRecode" class="cxbtn">按住录音（可选）</button>
+<button bindtap="play" class='btn'>播放录音</button>
+<button bindtap="upload" class='btn'>上传录音</button>

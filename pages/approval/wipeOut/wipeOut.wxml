@@ -1,0 +1,71 @@
+<!--pages/approval/ wipeOut/ wipeOut.wxml-->
+<view class='main' >
+<form  bindsubmit="formSubmit" bindreset="formReset">   
+  <view class='spilt'></view>
+  <view class='box'>
+    <text class="c-gray iconbookmarks"></text>
+    <text class='title'>请假类型</text>
+        <picker name='mark' class='date'  bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      {{array[index]}}
+    </view>
+  </picker>
+  </view>
+  <view class='spilt'></view>
+  <view class='box'>
+    <text class="c-gray iconuser-tie"></text>
+    <text class='title'>开始时间</text>
+     <picker name='taskDate' mode="date" class='date' value="{{startdate}}"  bindchange="bindStartDateChange">
+    <view class="picker">
+      {{startdate}}
+    </view>
+  </picker>
+  </view>
+   <view class='box'>
+    <text class="c-gray iconalarm"></text>
+    <text class='title'>结束时间</text>
+     <picker name='taskDate' mode="date" class='date' value="{{enddate}}"  bindchange="bindEndDateChange">
+    <view class="picker">
+      {{enddate}}
+    </view>
+  </picker>
+  </view> 
+
+  <view class='box'>
+    <text class="c-gray iconalarm"></text>
+    <text class='title'>请假天数</text>
+    <view bindlongtap='changeNum'>
+      {{num}}
+    </view>
+  </view> 
+
+
+  <view class='spilt'></view>
+  <view class='blockw'>请假理由</view>
+  <view class='box'>
+    <textarea name='taskContent' />
+  </view>
+  <view class='spilt'></view>
+    <view class='blockw'>说明附件</view>
+    <view class='imgBoxs'>
+    <image class='imgBox' image src="{{tempFilePaths }}" catchTap="chooseImageTap" mode="aspectFit"></image>
+   </view>
+  
+   <view class='spilt'></view>
+   <button class='btn btn-size' formType="submit">提交</button> 
+   <view class='spilt'></view>   
+</form>
+</view>
+<!--底部导航-->
+<view class='bottom-nav'>
+  <image  bindtap="chooseimage" src='/pages/img/phone-icon.jpg'></image>
+  <view class='c-spilt'></view>
+  <image src='/pages/img/fj-icon.png'></image>
+  <view class='c-spilt'></view>
+</view>
+
+
+
+
+
+

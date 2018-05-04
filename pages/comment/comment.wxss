@@ -1,0 +1,46 @@
+/* pages/comment/comment.wxss */
+page{
+  background-color: #ffffff;
+  margin-bottom: 40px;
+}
+.main{
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.content{
+  width: 90%;
+}
+.content textarea{
+  width: 100%;
+}
+.upimg{
+  width: 100%;
+  margin-top: 10px;
+}
+.upimg image{
+  width: 40%;
+  height: 120px;
+}
+.file{
+  margin-top: 10px;
+  background-color: #fbfbfb;
+  border:1px solid #f5f5f5;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 12px;
+}
+/*底部导航*/
+.bottom-nav image{
+  width: 48px;
+  height: 100%;
+}
+.bottom-nav .right{
+   padding-top: 5px;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  right: 10px;
+}

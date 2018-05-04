@@ -14,12 +14,12 @@
 <!--main-->
 <view class="main">
     <view class="login-board" id="loginBoard">
-      <form bindsubmit="formsubmit">
+      <form id="loginForm" bindsubmit="formsubmit">
         <view class="form-cl">
-				  <input name='phoneNum' class="" type="text" placeholder="手机号" maxlength="11" />   
+				  <input name='phone' class="" type="text" placeholder="手机号" maxlength="11" />   
         </view>
         <view class="form-cl">
-				  <input name='pwd' class="" type="password" placeholder="密码" />    
+				  <input name='password' class="" type="password" placeholder="密码" />    
         </view>
         <view class="ctrl">
 				  <button formType="submit" class="btn disabled" id='loginBtn'>登录</button>

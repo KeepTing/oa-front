@@ -1,0 +1,14 @@
+<!--pages/task/selectedList/selectedList.wxml-->
+<view class='spilt'></view>
+<view class='boxcheck' wx:for="{{selectedList}}" >
+  <label  class="checkbox" data-id="{{item.eid}}" bindtap='staffDetail'>
+      <text class='tx'>{{item.username}}</text>
+      <text class='name'>{{item.username}}</text>
+      <block wx:if="{{item.status==1}}">
+      <text class='status'>已完成</text>
+      </block>
+       <block wx:if="{{item.status==0}}">
+      <text class='status'>未完成</text>
+      </block>
+  </label>
+</view>

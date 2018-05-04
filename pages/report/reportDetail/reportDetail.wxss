@@ -1,0 +1,105 @@
+/* pages/report/reportDetail/reportDetail.wxss */
+page{
+  margin-bottom: 50px;
+  width: 100%;
+}
+.main-body{
+  width: 100%;
+  overflow: hidden;
+}
+.box{
+  background-color: #ffffff;
+  border-top:1px solid #d4d4d4;
+  padding: 15px;
+}
+.box>.title{
+  font-weight: bold;
+  font-size: 18px;
+}
+.box>.title text{
+  display: inline-block;
+  padding-right: 10px;
+}
+.box>.info{
+  padding: 15px 0px;
+  font-size: 15px;
+}
+.box>.info text{
+  padding-bottom: 3px;
+}
+.info text:first-child{
+  color: #808080;
+  width: 20%;
+  display: inline-block;
+}
+.time{
+  font-size: 12px;
+  color: #808080;
+}
+/*评论区样式*/
+.comment{
+   background-color:white; 
+}
+.comment .title{
+  padding: 10px 15px;
+  border-bottom:1px solid #d4d4d4;
+}
+.c-box{
+  width: 96%;
+  border-bottom: 1px solid #f9f9f9;
+  display: flex;
+  padding: 10px;
+}
+.c-img{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+.c-img image{
+  width: 50%;
+}
+.all-text{
+  display: flex;
+  width: 80%;
+}
+.all-text text{
+  display: inline-block;
+}
+.box1{
+  width: 85%;
+}
+.box2{
+  width:13%;
+  font-size: 12px;
+  color: #909090;
+}
+.box1 view,.box2 view{
+  margin-bottom: 3px;
+}
+.c-content{
+  font-size: 32rpx;
+  }
+.c-upimg{
+  width: 50%;
+}
+.c-upimg image{
+  width: 100%;
+}
+.c-file{
+  background-color: #fbfbfb;
+  border:1px solid #f5f5f5;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 12px;
+}
+.c-icon,.c-time{
+  width: 100%;
+  text-align:right;
+}
+.into{
+  color: #909090;
+  display: block;
+  line-height: 40px;
+  margin-left: 10px;
+}

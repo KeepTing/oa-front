@@ -1,0 +1,68 @@
+<!--pages/me/staffInfo/staffInfo.wxml-->
+<view>
+<view class='top'>
+  <view class='img'>
+    <image  src='{{headImg}}'></image>
+  </view>
+  <view class='info'>
+    <text class='name'>{{name}}</text>
+    <text class='post'>{{post}}</text>
+  </view>
+   <view class='addDirectory' bindtap='addDirectory'>
+    <text class='iconclipboard-edit2'></text>
+  </view>
+</view>
+<view>
+  <view class="navbar">  
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
+  </view> 
+<view hidden="{{currentTab!==0}}">  
+  <view class='box'>
+    <view class='title'>联系方式</view>
+    <view class='xq-info' >
+      <view class='phone'>手机号</view>
+      <view class='qt-phone'>{{phoneNum}}</view>
+      <view class='xq-btn'>
+       <!--<view class='xqi-btn iconcommenting'></view>--> 
+        <view class='xqi-btn iconphone' bindtap='calling' ></view> 
+      </view>
+    </view>
+  </view>
+
+    <view class='box'>
+    <view class='title'>个人信息</view>
+    <view class='xq-info'>
+      <text class='phone'>部门</text>
+      <text class='qt-phone'>{{dept}}</text>
+      <text class='xq-btn'></text>
+    </view>
+  </view>
+</view>
+<view hidden="{{currentTab!==1}}">  
+  <view class="navbar border-color" >  
+    <text wx:for="{{navbar1}}" data-idx="{{index}}" class="item {{currentTab1==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap1">{{item}}</text> 
+    </view> 
+    <view class='navbar1-content'>
+      <view hidden="{{currentTab1!==0}}">0</view>
+      <view hidden="{{currentTab1!==1}}">1</view>
+      <view hidden="{{currentTab1!==2}}">2</view>
+      <view hidden="{{currentTab1!==3}}">3</view>
+      <view hidden="{{currentTab1!==4}}">4</view>
+      <view hidden="{{currentTab1!==5}}">5</view>
+    </view>
+
+
+</view>
+
+
+</view>
+
+<view class='bottom-nav'>
+ <button class='btn'>发消息</button>
+</view>
+
+
+
+
+
+</view>

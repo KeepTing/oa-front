@@ -1,0 +1,68 @@
+<!--pages/schedule/addSchedule/addSchedule.wxml-->
+<view class='main' >
+<form  bindsubmit="formSubmit" bindreset="formReset">   
+  <view class='spilt'></view>
+  <view class='box'>
+    <text class="c-gray iconbookmark2"></text>
+    <view class='title1'>主题 <text class='c-red'> *</text></view>
+    <view class='input'><input name='Name' placeholder='请输入' /></view>
+  </view>
+  <view class='box'>
+    <text class="c-gray iconlocation"></text>
+    <text class='title'>地点</text>  
+  </view>
+   <view class='box'>
+    <text class="c-gray"></text>
+    <text class='dflag'>开始</text>
+    <view class='dp'>
+     <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+    <view class="tui-picker-detail">
+      {{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}
+    </view>
+  </picker>
+    </view>
+    <text class='dflag'>结束</text>
+    <view class='dp'>
+          <picker mode="multiSelector" value="{{dateTime2}}"   bindchange="changeDateTime2" bindcolumnchange="changeDateTimeColumn2" range="{{dateTimeArray2}}">
+    <view class="tui-picker-detail">
+      {{dateTimeArray2[0][dateTime2[0]]}}-{{dateTimeArray2[1][dateTime2[1]]}}-{{dateTimeArray2[2][dateTime2[2]]}} {{dateTimeArray2[3][dateTime2[3]]}}:{{dateTimeArray2[4][dateTime2[4]]}}
+    </view>
+  </picker>
+    </view>
+
+  </view>  
+  <view class='spilt'></view>
+  <view class='box'>
+    <text class="c-gray iconuser"></text>
+    <text class='title'>被邀请人</text>
+    <view class='input'>
+
+       
+    </view>
+  </view>
+   <view class='spilt'></view>
+   <view class='box'>
+    <text class='title'>日程内容</text>
+  </view>
+  <view class='box'>
+    <textarea name='content' placeholder="备注"/>
+  </view>
+   <view class='imgBoxs'>
+    <image name='img' class='imgBox' value="{{tempFilePaths }}" src="{{tempFilePaths }}" catchTap="chooseImageTap" mode="aspectFit"></image>
+   </view>
+   <view class='spilt'></view>
+   <button class='btn btn-size' formType="submit">提交</button> 
+   <view class='spilt'></view>   
+</form>
+</view>
+<!--底部导航-->
+<view class='bottom-nav'>
+  <image  bindtap="chooseimage" src='/pages/img/phone-icon.jpg'></image>
+  <view class='c-spilt'></view>
+  <image src='/pages/img/fj-icon.png'></image>
+  <view class='c-spilt'></view>
+</view>
+
+
+
+

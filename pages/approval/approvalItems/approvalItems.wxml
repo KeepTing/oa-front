@@ -1,0 +1,32 @@
+<!--pages/approval/approvalItems/approvalItems.wxml-->
+<!--导航条-->  
+<view class="navbar">  
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+</view>  
+<!--进行中-->  
+<view hidden="{{currentTab!==0}}">  
+<view class='spilt'></view>
+  <view wx:for='{{Info}}' class='box' bindtap='navtoDetail'>
+    <view class='r-img'>
+      <image mode='widthFix' src='{{item.src}}'></image>
+    </view>
+    <view class='all-text'>
+      <view>
+        <text class='r-name'>{{item.name}}</text>
+        <text class='r-date'>{{item.date}}</text>
+      </view>
+      <view> 
+        <view class='r-cu'>请假天数：{{item.num}}</view>
+        <view class='r-content'>{{item.topic}}</view>
+      </view>
+    </view>
+  </view>
+
+
+</view>  
+  
+<!--已完成-->  
+<view hidden="{{currentTab!==1}}">  
+  tab_02  
+</view>  
+ <view class='add' bindtap='addApp'>+</view>

@@ -1,0 +1,66 @@
+/* pages/task/addTask/addTask.wxss */
+page{
+  width: 100%;
+}
+.main{
+   width: 100%;
+  margin-bottom:50px; 
+  overflow: hidden;
+}
+.box{
+  width: 100%;
+  background-color: #fff;
+  padding: 10px 0px 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border-bottom: 1px solid #f9f9f9;
+  
+}
+.box text{
+  display: inline-block;
+  margin-right: 10px;
+  color: #808080;
+  font-size: 37rpx;
+}
+.title{
+ width: 20%;
+}
+.box input{
+  display: inline-block;
+  font-size: 34rpx; 
+  margin-left: 10px;
+  width: 55%;
+}
+.date{
+  font-size: 34rpx;
+  margin-left: 10px;
+  /*color: #808080;*/
+}
+textarea{
+  font-size: 34rpx;
+  margin-left: 10px;
+  height: 100px;
+}
+.btn-size{
+  width: 80%;
+}
+
+.bottom-nav image{
+  width: 35px;
+  height: 35px;
+  float: right;
+  position: relative;
+  top: 5px;
+  right: 10px;
+  
+}
+
+.weui-uploader__title
+{
+  display:inline-block;
+margin-right:10px;
+color:#808080;
+font-size:37rpx;
+}
+

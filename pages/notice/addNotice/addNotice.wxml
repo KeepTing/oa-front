@@ -1,0 +1,64 @@
+<!--pages/notice/addNotice/addNotice.wxml-->
+<view class='main' >
+<form  bindsubmit="formSubmit" bindreset="formReset">   
+  <view class='spilt'></view>
+  <view class='box'>
+    <text class="c-gray iconbookmark2"></text>
+    <text class='title'>标题</text>
+    <view class='input'><input name='Name' placeholder='请输入' /></view>
+  </view>
+  <view class='box'>
+    <text class="c-gray iconview-tile"></text>
+    <text class='title'>公告类型</text>
+    <view class='input'>
+      <picker name='topic' bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+     
+  </view>
+   <view class='box'>
+    <text class="c-gray iconuser"></text>
+    <text class='title'>公告范围</text>
+    <view class='input'><input name='range' placeholder='请输入' /></view>
+  </view>  
+  <view class='spilt'></view>
+  <view class='box'>
+    <text class="c-gray iconclock"></text>
+    <text class='title'>公示期至</text>
+    <view class='input'>
+      <picker name='date' mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          {{date}} 23:59
+        </view>
+       </picker>
+       
+    </view>
+  </view>
+   <view class='spilt'></view>
+   <view class='box'>
+    <text class='title'>公告内容</text>
+  </view>
+  <view class='box'>
+    <textarea name='content' placeholder="请输入公告内容....."  />
+  </view>
+   <view class='imgBoxs'>
+    <image name='img' class='imgBox' value="{{tempFilePaths }}" src="{{tempFilePaths }}" catchTap="chooseImageTap" mode="aspectFit"></image>
+   </view>
+   <view class='spilt'></view>
+   <button class='btn btn-size' formType="submit">提交</button> 
+   <view class='spilt'></view>   
+</form>
+</view>
+<!--底部导航-->
+<view class='bottom-nav'>
+  <image  bindtap="chooseimage" src='/pages/img/phone-icon.jpg'></image>
+  <view class='c-spilt'></view>
+  <image src='/pages/img/fj-icon.png'></image>
+  <view class='c-spilt'></view>
+</view>
+
+
+

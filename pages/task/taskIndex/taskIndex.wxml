@@ -1,0 +1,27 @@
+<!--pages/task/taskIndex/taskIndex.wxml-->
+<view>
+  <view class='spilt'></view>
+  <navigator class='box' url="/pages/task/taskList/taskList?title=今日待办">
+    <span class="c-red iconbriefcase"></span>
+    <text>今日待办</text>
+    <span class="pot">{{today}}</span>
+  </navigator>
+  <navigator class='box' url="/pages/task/taskList/taskList?title=全部">
+    <span class="c-green iconcheckmark"></span>
+    <text>全部</text>
+    <span class="pot">{{all}}</span>
+  </navigator>
+  <view class='spilt'></view>
+  <navigator class='box' url="/pages/task/taskList/taskList?title=分配给我">
+      <span class="c-blue iconuser-tie"></span>
+      <text>分配给我</text>
+      <span class="pot">{{tome}}</span>
+  </navigator>
+   <navigator class='box' url="/pages/task/taskList/taskList?title=我验收的">
+      <span class="c-orangle iconpen"></span>
+      <text>我验收的</text>
+      <span class="pot">{{fromme}}</span>
+  </navigator>
+
+
+</view>

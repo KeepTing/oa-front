@@ -1,11 +1,50 @@
 {
   "pages": [
-    
-    "pages/login/login",
+    "pages/login/login",  
+    "pages/task/addTask/addTask",
     "pages/index/index",
+    "pages/phone/phone",
+    "pages/background-audio/background-audio",
+     "pages/selectedList/selectedList",
+      "pages/test",
+      "pages/image/image",
+      
+ 
+
+    "pages/task/taskDetail/taskDetail",
+
+  
+    "pages/dept/dept/dept",
+  
+
+    "pages/task/taskIndex/taskIndex",
+    "pages/me/staffInfo/staffInfo",
+    "pages/me/meInfo/meInfo",
+    "pages/approval/approvalItems/approvalItems",
+    "pages/advise/advise",
+    "pages/me/me",
+    "pages/me/meItems/meItems", 
+    "pages/schedule/addSchedule/addSchedule",
+    "pages/schedule/scheduleDetail/scheduleDetail",
+    "pages/notice/noticeDetail/noticeDetail",
+    "pages/schedule/meSchedule/meSchedule",
+    "pages/comment/comment",
+    "pages/notice/addNotice/addNotice",
+    "pages/report/newReport/newReport",
+    "pages/report/addReport/addReport",
+    "pages/report/reportDetail/reportDetail",
+    "pages/addTask/addTask",
     "pages/logs/logs",
-    "pages/me/me"
-    
+    "pages/taskItems/taskItems",
+    "pages/notice/noticeItems/noticeItems",
+    "pages/report/reportItems/reportItems",
+    "pages/approval/addApproval/addApproval",
+    "pages/approval/approvalItem/approvalItem",
+    "pages/approval/approvalDetail/approvalDetail",
+    "pages/approval/ wipeOut/ wipeOut",
+    "pages/attendance/attendPage/attendPage",
+    "pages/task/taskList/taskList",
+    "pages/dept/staff/staff"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,20 +53,34 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#BEBEBE",
-    "selectedColor": "#3366cc",
+    "color": "#000000",
+    "selectedColor": "#000000",
     "backgroundColor": "#f2f2f2",
     "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
-        "selectedIconPath":"pages/img/login/iso.png",
-        "iconPath":"pages/img/login/iso.png"
+        "text": "工作台",
+        "selectedIconPath": "pages/img/menu/folder.png",
+        "iconPath": "pages/img/menu/folder.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "企信",
+        "selectedIconPath": "pages/img/menu/mail-envelope-open.png",
+        "iconPath": "pages/img/menu/mail-envelope-closed.png"
       },
       {
         "pagePath": "pages/me/me",
-        "text": "我"  
+        "text": "通讯录",
+        "selectedIconPath": "pages/img/menu/notebook-text.png",
+        "iconPath": "pages/img/menu/notebook-text.png"
+      },
+      {
+        "pagePath": "pages/me/meItems/meItems",
+        "text": "我的",
+        "selectedIconPath": "pages/img/menu/sun.png",
+        "iconPath": "pages/img/menu/sun.png"
       }
     ]
   }

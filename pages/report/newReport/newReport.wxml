@@ -1,0 +1,21 @@
+<!--pages/report/newReport/newReport.wxml-->
+<!--汇报遮罩-->
+<view class="report-model" hidden="{{flag}}"> 
+   <view class="model-box"> 
+      <view class="m-content"> 
+        <view class='m-flex' bindtap='toaddweek'>
+         <view class='flex-icon b-green'>
+          <text class='iconnotebook-list m-size'></text>
+         </view>
+         周报
+        </view>
+         <view class='m-flex' bindtap='toaddMonth'>
+         <view class='flex-icon b-blue'>
+          <text class='iconnotebook-text2 m-size'></text>
+         </view>
+         月报
+        </view>
+      </view> 
+   </view> 
+   <view class='other' bindtap='b'>关闭</view>
+</view> 

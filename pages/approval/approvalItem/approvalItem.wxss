@@ -1,0 +1,24 @@
+/* pages/approval/approvalItem/approvalItem.wxss */
+.box {
+  margin-top: 10px;
+  padding-left: 10px;
+  background: #ffffff;
+  padding-top:0px;
+  padding-bottom: 10px; 
+}
+.box view{
+
+  height: 40px;
+  border-bottom: 1px solid #f2f2f2;
+  line-height: 40px; 
+}
+.title{
+  margin-left: 10px;
+}
+.icons{
+  display: inline-block;
+  float: right;
+  line-height: 40px;
+  margin-right:10px; 
+  color: #f2f2f2;
+}

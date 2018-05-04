@@ -1,0 +1,42 @@
+<!--pages/report/reportItems/reportItems.wxml-->
+
+<view class='main'>
+  <view class='spilt'></view>
+   <view class='box'>
+    <view class='r-img'>
+      <image mode='widthFix' src='/pages/img/compropago.png'></image>
+    </view>
+    <view class='all-text'>
+      <view>
+        <text class='r-name'>姓名</text>
+        <text class="r-topic">汇报类型</text>
+        <text class='r-date'>汇报日期</text>
+      </view>
+      <view>
+        <view class='r-cu'>汇报类型+汇报日期</view>      
+        <view class='r-content'>汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view wx:for='{{Info}}' class='box' bindtap='navtoDetail'>
+    <view class='r-img'>
+      <image mode='widthFix' src='/pages/img/compropago.png'></image>
+    </view>
+    <view class='all-text'>
+      <view>
+        <text class='r-name'>{{item.name}}</text>
+        <text class="r-topic">{{item.topic}}</text>
+        <text class='r-date'>{{item.date}}</text>
+      </view>
+      <view>
+        <view class='r-cu'>汇报类型+汇报日期</view>      
+        <view class='r-content'>汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+

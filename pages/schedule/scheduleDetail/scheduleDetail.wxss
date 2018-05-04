@@ -1,0 +1,160 @@
+/* pages/schedule/scheduleDetail/scheduleDetail.wxss */
+page{
+  margin-bottom: 50px;
+  width: 100%;
+}
+.main-body{
+  width: 100%;
+  overflow: hidden;
+}
+
+.f-box{
+  width: 100%;
+  border-bottom: 1px solid #f9f9f9;
+  display: flex;
+  padding: 10px 0px;
+}
+.f-img{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  border-radius: 50%;
+}
+.f-img image{
+  width: 60%;
+   border-radius: 50%;
+}
+.f-info{
+  width: 80%;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+.f-info>text:first-child{
+  width: 15%;
+}
+.f-info>text:nth-child(2){
+  width: 70%;
+}
+
+
+
+.box{
+  background-color: #ffffff;
+  /*border-top:1px solid #d4d4d4;*/
+
+  padding: 15px;
+}
+.box>.title{
+  font-weight: bold;
+  font-size: 18px;
+}
+.box>.title text{
+  display: inline-block;
+  padding-right: 10px;
+}
+.box>.info{
+  font-size: 15px;
+  display: flex;
+  margin: 10px 0px;
+}
+.box>.info text{
+  padding-right:10px;
+  display: block;  
+  color: #808080;
+  font-size: 12px;
+}
+.boxItem{
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #f9f9f9;
+  background-color:white; 
+  display: flex;
+
+}
+.boxItem>text:first-child{  
+  color: #808080;
+  font-size: 14px;
+  width: 25%;
+}
+.boxItem>text:nth-child(2){  
+  font-size: 15px;
+  width: 40%;
+}
+/*评论区样式*/
+.comment{
+   background-color:white; 
+   padding: 10px 0px;
+}
+.c-box{
+  width: 96%;
+  border-bottom: 1px solid #f9f9f9;
+  display: flex;
+  padding: 10px 0px;
+}
+.c-img{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  border-radius: 50%;
+}
+.c-img image{
+  width: 50%;
+   border-radius: 50%;
+}
+.all-text{
+  display: flex;
+  width: 80%;
+}
+.all-text text{
+  display: inline-block;
+}
+.box1{
+  width: 85%;
+}
+.box2{
+  width:13%;
+  font-size: 12px;
+  color: #909090;
+}
+.box1 view,.box2 view{
+  margin-bottom: 3px;
+}
+.c-content{
+  font-size: 32rpx;
+  }
+.c-upimg{
+  width: 50%;
+}
+.c-upimg image{
+  width: 100%;
+}
+.c-file{
+  background-color: #eeeeee;
+  border:1px solid #d4d4d4;
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+.c-icon,.c-time{
+  width: 100%;
+  text-align:right;
+}
+.bottom-nav{
+  display: flex;
+}
+.into{
+  width: 85%;
+  color: #909090;
+  display:inline-block;
+  line-height: 40px;
+  margin-left: 10px;
+}
+.click{
+  width: 13%;
+}
+.click image{
+  width: 70%;
+  padding-top: 5px;
+}

@@ -1,0 +1,15 @@
+<!--pages/dept/staff/staff.wxml-->
+  <label class="radio" bindtap='selectAll' >
+    <radio  value="{{select}}" checked="{{selectcheck}}"/>{{select}}
+  </label>
+  
+<view class='boxcheck' >
+<checkbox-group bindchange="checkboxChange" >
+  <label  class="checkbox" wx:for="{{staff}}">
+    <checkbox value="{{item.eid}}" checked="{{item.checked}}"/>
+      <text class='tx'>{{item.username}}</text>
+      <text class='name'>{{item.username}}</text>
+     
+  </label>
+</checkbox-group>
+</view>

@@ -1,0 +1,47 @@
+<!--pages/me/meItems/meItems.wxml-->
+<!--pages/task/task.wxml-->
+<view>
+<view class='spilt'></view>
+<view class='top'>
+  <view class='img'>
+    <image mode='widthFix' src='/pages/img/tx.jpg'></image>
+  </view>
+  <view class='info' >
+    <text class='name'>刘洋</text>
+    <text class='post'>教师</text>
+  </view>
+   <view class='addDirectory' >
+    <navigator class='iconcheveron-right' url='/pages/me/staffInfo/staffInfo'>
+    </navigator>
+  </view>
+</view>
+  <view class='spilt'></view>
+  <view class='box' bindtap='clickto' data-caption='今日待办'>
+    <span class="c-red iconbriefcase"></span>
+    <text>任务</text>
+    <span class="pot">2</span>
+  </view>
+  <navigator class='box' url="/pages/taskItems/taskItems?title=最近7天">
+    <span class="c-yellow iconcalendar"></span>
+    <text>我的消息</text>
+    <span class="pot">2</span>
+  </navigator>
+  <navigator class='box' url="/pages/taskItems/taskItems?title=全部">
+    <span class="c-green iconcheckmark"></span>
+    <text>帮助中心</text>
+    <span class="pot">2</span>
+  </navigator>
+  <view class='spilt'></view>
+  <view class='spilt'></view>
+   <view class='box'>
+      <span class="c-blue iconusers"></span>
+      <text>邀请同事</text>
+      <span class="pot">2</span>
+  </view>
+  <view class='spilt'></view>
+  <view class='box'>
+      <span class="c-red iconcog2"></span>
+      <text>设置</text>
+      <span class="pot">2</span>
+  </view>
+</view>

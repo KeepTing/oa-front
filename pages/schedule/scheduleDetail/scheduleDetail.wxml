@@ -1,0 +1,111 @@
+<!--pages/schedule/scheduleDetail/scheduleDetail.wxml-->
+<view class='main-body'>
+<view class='f-box'>
+      <view class='f-img'>
+        <image mode='widthFix' src='/pages/img/tx.jpg'></image>
+      </view>
+      <view class='f-info'>
+        <text>刘洋</text>
+        <text> 邀请你参加日程</text>
+        <text >19:43</text>
+      </view>
+</view>
+<view class='box'>
+  <view class='title'>
+    <text>校长会议</text>
+  </view>
+  <view class='info'>
+      <text>2018年3月28号</text>
+      <text>星期三</text>
+      <text>17：00-18：00</text>
+  </view>
+  <view class='content'>
+   呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜
+  </view>
+</view>
+<view class='spilt'></view>
+ <view class='boxItem'>
+    <text>发起人</text>
+    <text class="pot">李静</text>
+</view>
+ <view class='boxItem'>
+    <text>被邀请人</text>
+    <text class="pot">0人接受/共1人</text>
+</view>
+ <view class='boxItem'>
+    <text>知会</text>
+    <text class="pot">无</text>
+</view>
+<view class='spilt'></view>
+
+<view class='comment'>
+  <view class='content'>
+
+   <view class='c-box'>
+      <view class='c-img'>
+      <image mode='widthFix' src='/pages/img/tx.jpg'></image>
+    </view>
+    <view class='all-text'>
+      <view class='box1'>
+        <view class='c-name'>姓名</view>
+        <view class='c-content'> 
+        汇报内容汇报内容汇
+        </view>
+      </view>
+      <view class='box2'>     
+        <view class='c-time'>10:20</view>
+        <view class='c-icon'>
+          <text class='iconchat-bubble-dots c-blue'></text>
+        </view>
+      </view>
+    </view>
+    </view>
+
+
+
+    <view class='c-box'>
+      <view class='c-img'>
+      <image mode='widthFix' src='/pages/img/tx.jpg'></image>
+    </view>
+    <view class='all-text'>
+      <view class='box1'>
+        <view class='c-name'>姓名</view>
+        <view class='c-content'> 
+        汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容
+        </view>
+        <view class='c-upimg'>
+          <image mode='widthFix' src='/pages/img/jt.jpg'></image>
+        </view>
+        <view class='c-file'>文件.txt</view>
+      </view>
+      <view class='box2'>     
+        <view class='c-time'>10:20</view>
+        <view class='c-icon'>
+          <text class='iconchat-bubble-dots c-blue'></text>
+        </view>
+      </view>
+    </view>
+    </view>
+
+
+   
+
+
+    
+
+  
+
+  </view>
+</view>
+<!--底部导航-->
+<view class='bottom-nav'>
+  <view class='into' bindtap='clickToComment'>输入回复内容....</view>
+  <view class='click' bindtap='otherOper'>
+  <image mode='widthFix' src='/pages/img/compropago.png'></image>
+  </view>
+</view>
+
+
+</view>
+
+
