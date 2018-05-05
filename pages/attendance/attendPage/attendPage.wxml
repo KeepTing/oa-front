@@ -1,9 +1,60 @@
 <!--pages/attendance/attendPage/attendPage.wxml-->
 
-<view class='container'>
-
+<view class='box'>
+<block wx:if="{{play === true}}">
 <view class='box-view'>
-
+<view>
+ <image src='/image/location.png' style='width:50px ;height:50px;'></image>
+ </view>
+<text>请立即打卡</text>
 </view>
 
+  <view class='circle'>
+    <view class='circleBtn' bindtap='clickto'>
+        <text class='time'>{{time}}</text>
+        <text class='title'>{{title}}</text>
+    </view>
+  </view>
+
+<view class='bottom' hidden='{{current == 0}}'>
+请在<text>{{timeRange}}</text>之前打卡
+</view>
+<view class='bottom' hidden='{{current == 1}}'>
+请在<text>{{timeRange}}</text>之后打卡
+</view>
+
+
+</block>
+
+<block wx:if="{{play === false}}">
+<view class='circle1' animation="{{animation}}">
+<view class='circleSuccess'>
+    <text class='{{icon}}'></text>
+</view>
+<view class='title'>
+  <text>{{titlesuccess}}</text>
+</view>
+<view class='info'>
+  <view>
+   <text>时间</text>
+   <text>{{timesuccess}}</text>
+  </view>
+  <view>
+   <text>位置</text>
+    <text>公司范围内</text>
+  </view> 
+ <view>
+  <text>打卡情况</text>
+  <text>{{status}}</text>
+ </view>
+  
+</view>
+
+</view>
+</block>
+</view>
+
+
+<view class='nav' bindtap='tomodel'>
+<view class='iconlist'></view>
 </view>

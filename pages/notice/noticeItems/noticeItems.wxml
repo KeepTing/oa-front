@@ -4,19 +4,23 @@
   <view class='spilt'></view>
   <view wx:for='{{rInfo}}' class='box' bindtap='navtoDetail' data-id="{{item.id}}">
     <view class='r-img'>
-      <image src='{{item.srcimg}}'></image>
+      <image src='{{item.headImg}}'></image>
     </view>
     <view class='all-text'>
       <view>
-        <text class='name'>{{item.name}}</text>
-        <text class='time'>{{item.time}}</text>
+        <text class='name'>{{item.fromUser}}</text>
+        <text class='time'>{{item.createTime}}</text>
       </view>
       <view>
         <view class='title'>{{item.title}}</view>      
-        <view class='content'>{{item.content}}</view>
       </view>
     </view>
   </view>
+</view>
+
+<!--底部导航-->
+<view class='nav' bindtap='clicktoadd' hidden='{{currentTab!==0}}'>
+  <view class='iconplus'></view>
 </view>
 
 

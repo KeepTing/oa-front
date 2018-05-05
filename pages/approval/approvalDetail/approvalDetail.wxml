@@ -1,55 +1,50 @@
 <!--pages/approval/approvalDetail/approvalDetail.wxml-->
-<view class='main' >
-<form  bindsubmit="formSubmit" bindreset="formReset">   
-  <view class='spilt'></view>
-  <view class='box'>
-    <text class="c-gray iconbookmarks"></text>
-    <text class='title'>请假类型</text>
-        <picker name='mark' class='date'  bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-    <view class="picker">
-      {{array[index]}}
-    </view>
-  </picker>
+<view class='main-body'>
+
+<view class='spilt'></view>
+<view class='box'>
+  <view class='title'>
+    <text>我的请假申请</text>
   </view>
-  <view class='spilt'></view>
-  <view class='box'>
-    <text class="c-gray iconuser-tie"></text>
-    <text class='title'>开始时间</text>
-     <picker name='taskDate' mode="date" class='date' value="{{startdate}}"  bindchange="bindStartDateChange">
-    <view class="picker">
-      {{startdate}}
+<view class='info'>
+    <view>
+      <text>请假类型</text>
+      <text>{{qjtype}}</text>
     </view>
-  </picker>
-  </view>
-   <view class='box'>
-    <text class="c-gray iconalarm"></text>
-    <text class='title'>结束时间</text>
-     <picker name='taskDate' mode="date" class='date' value="{{enddate}}"  bindchange="bindEndDateChange">
-    <view class="picker">
-      {{enddate}}
+    <view>
+      <text>开始时间</text>
+      <text>{{startTime}}</text>
     </view>
-  </picker>
-  </view>  
-  <view class='spilt'></view>
-  <view class='box'>
-    <textarea name='taskContent' placeholder="任务描述"  />
+    <view>
+      <text>结束时间</text>
+      <text>{{endTime}}</text>
+    </view>
+    <view>
+      <text>请假时长</text>
+      <text>{{numTime}}</text>
+    </view>
   </view>
- 
-   <view class='imgBoxs'>
-    <image class='imgBox' image src="{{tempFilePaths }}" catchTap="chooseImageTap" mode="aspectFit"></image>
-   </view>
-   <view class='spilt'></view>
-   <button class='btn btn-size' formType="submit">提交</button> 
-   <view class='spilt'></view>   
-</form>
+<view >
+
+
 </view>
-<!--底部导航-->
-<view class='bottom-nav'>
-  <image  bindtap="chooseimage" src='/pages/img/phone-icon.jpg'></image>
-  <view class='c-spilt'></view>
-  <image src='/pages/img/fj-icon.png'></image>
-  <view class='c-spilt'></view>
 </view>
+<view class='spilt'></view>
+<view class='blockw'>请假理由</view>
+<view class='box'>
+{{content}} 看到符合国进口大幅高开低房价高得房空间广阔的房价高峰到来科技股客服了解到公开立法机构
+</view>
+<view class='spilt'></view>
+<view class='blockw'>审批流程</view>
+<view class='box'>
+  <view class='box-sp'>
+    <image src='{{src}}'></image>
+    <text>{{name}}</text>
+    <text>{{status}}</text>
+  </view>
+</view>
+
+  </view>
 
 
 

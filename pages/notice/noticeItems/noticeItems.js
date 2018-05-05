@@ -1,40 +1,61 @@
 // pages/notice/noticeItems/noticeItems.js
+var host = getApp().globalData.host;
+
+var header = getApp().globalData.header; //获取app.js中的请求头
 Page({
   data: {
     rInfo: [{
       id:'',
-      srcimg:'/pages/img/tx.jpg',
-      name: '王建东',
-      time: '2014-12-12',
+      headImg:'/pages/img/tx.jpg',
+      fromUser: '王建东',
+      createTime: '2014-12-12',
       title:'断电公关稿',
-      content:''
-    }]
+    }],
+    currentTab: 1
   },
   navtoDetail: function (e) {
 
     wx.navigateTo({
-      url: "/pages/notice/noticeDetail/noticeDetail?id=" + e.currentTarget.dataset.id 
+      url: "/pages/notice/noticeDetail/noticeDetail?noticeid=" + e.currentTarget.dataset.id 
 
+    })
+  },
+  clicktoadd: function () {
+
+    wx.setStorageSync("totalUserIdList", []);
+    wx.navigateTo({
+      url: '/pages/notice/addNotice/addNotice',
     })
   },
   onLoad: function (e) {
     var that = this;
     console.log(e);
     wx.setNavigationBarTitle({
-      title: e.title
+      title: "公告列表"
     })
-    var header = getApp().globalData.header;
+
+    var user=wx.getStorageSync("user");
+    if(user!=null){
+      if(user.role==0 || user.role==1){
+        console.log(user.role);
+          that.setData({
+            currentTab:0
+          })
+      }
+    }
+
     //公告列表
-    // wx.request({
-    //   url: 'http://127.0.0.1:8080/task/detail/',
-    //         header:header,
-    //         method: 'GET',
-    //         dataType:'json',
-    //         success: function (res) {
-    //           console.log(res.data)
-    //           that.setData({
-    //             rInfo:res.data
-    //           });
-    //       });
+    wx.request({
+      url: host+'/notice/all',
+      header:header,
+      method: 'GET',
+      dataType:'json',
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          rInfo:res.data
+        });
+      }    
+    });
   },
 })

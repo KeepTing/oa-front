@@ -1,7 +1,21 @@
 <!--pages/approval/approvalItem/approvalItem.wxml-->
 <view class='box'>
-  <view  wx:for='{{info}}' bindtap='clickto' data-title='{{item.title}}'>
-    <text class='title'>{{item.title}}</text><text class='icons iconplex'></text>
-  </view>
+<view>
+  <navigator url='/pages/approval/addApproval/addApproval'>
+    <text class='title'>请假</text><text class='icons iconplex'></text>
+  </navigator> 
+</view>
+<view>
+  <navigator url='/pages/approval/addApproval/addApproval'>
+    <text class='title'>补卡</text><text class='icons iconplex'></text>
+  </navigator> 
+</view>
+<view>
+  <navigator url='/pages/approval/addApproval/addApproval'>
+    <text class='title'>调休</text><text class='icons iconplex'></text>
+  </navigator> 
+</view>
+
+ 
 </view>
 

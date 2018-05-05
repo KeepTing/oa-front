@@ -41,6 +41,7 @@ page{
   display: inline-block;
   font-size: 34rpx; 
   margin-left: 10px;
+  width: 60%;
 }
 .date{
   font-size: 34rpx;
@@ -60,17 +61,9 @@ textarea{
   width: 48px;
   height: 100%;
 }
-
-/* 选择成功后的图片显示样式 */
-.imgBoxs{
-  width: 100%;
-  height: 90px;
-  background-color:#ffffff;
-  padding: 10px 20px; 
-}
-.imgBox{
-  width: 20%;
-  height:100%;
+.up{
+  position: relative;
+  top: -348px;
 }
 
 

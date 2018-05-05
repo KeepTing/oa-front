@@ -1,15 +1,21 @@
 {
   "pages": [
-    "pages/login/login",  
+      "pages/login/login",
+    "pages/attendance/attendPage/attendPage",
+    "pages/notice/addNotice/addNotice",
+    
     "pages/task/addTask/addTask",
     "pages/index/index",
     "pages/phone/phone",
     "pages/background-audio/background-audio",
-     "pages/selectedList/selectedList",
-      "pages/test",
-      "pages/image/image",
-      
- 
+    "pages/selectedList/selectedList",
+    "pages/test",
+    "pages/image/image",
+    "pages/notice/selectedList/selectedList",
+   
+    "pages/attendance/attendRecord/attendRecord",
+    "pages/attendance/monthRecord/monthRecord",
+    "pages/notice/chooseUser/chooseUser",
 
     "pages/task/taskDetail/taskDetail",
 
@@ -29,7 +35,7 @@
     "pages/notice/noticeDetail/noticeDetail",
     "pages/schedule/meSchedule/meSchedule",
     "pages/comment/comment",
-    "pages/notice/addNotice/addNotice",
+
     "pages/report/newReport/newReport",
     "pages/report/addReport/addReport",
     "pages/report/reportDetail/reportDetail",
@@ -39,10 +45,10 @@
     "pages/notice/noticeItems/noticeItems",
     "pages/report/reportItems/reportItems",
     "pages/approval/addApproval/addApproval",
+    "pages/approval/replaceCard/replaceCard",
     "pages/approval/approvalItem/approvalItem",
     "pages/approval/approvalDetail/approvalDetail",
-    "pages/approval/ wipeOut/ wipeOut",
-    "pages/attendance/attendPage/attendPage",
+    "pages/approval/ wipeOut/wipeOut",
     "pages/task/taskList/taskList",
     "pages/dept/staff/staff"
   ],

@@ -16,100 +16,91 @@ page{
   font-weight: bold;
   font-size: 18px;
 }
+.box>.box-content{
+  width: 100%;
+ margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 1111111;
+}
+.box>.box-content>view:first-child{
+  width: 85%;
+}
+.box>.box-content>view:last-child{
+  width: 15%;
+  margin: 5px 0px;
+}
 .box>.title text{
   display: inline-block;
   padding-right: 10px;
 }
 .box>.info{
-  padding: 15px 0px;
   font-size: 15px;
 }
-.box>.info text{
-  padding-bottom: 3px;
+.info>view{
+  width: 100%;
+  margin:5px 0px;
+  overflow: hidden;
+  display: inline-block;
+}
+.info view text{
+  display: flex;
+  flex-direction: row;
 }
 .info text:first-child{
   color: #808080;
   width: 20%;
   display: inline-block;
+
 }
+.info text:last-child{
+  width:80%;
+  display: inline-block;
+}
+.info1{
+  width: 100%;
+  margin: 5px 0px;
+  display: flex;
+  flex-direction: row;
+}
+.info1 text{
+  display: inline-block;
+}
+.info1 text:nth-child(1){
+  width: 20%;
+}
+.info1 text:nth-child(2){
+  width:10%;
+}
+.info1 text:nth-child(3){
+  width: 70%;
+  color: #808080;
+}
+
+
+
 .time{
   font-size: 12px;
   color: #808080;
 }
-/*评论区样式*/
-.comment{
-   background-color:white; 
+.topeople::before{
+  content: "",
 }
-.comment .title{
-  padding: 10px 15px;
-  border-bottom:1px solid #d4d4d4;
+.topeople{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
-.c-box{
-  width: 96%;
-  border-bottom: 1px solid #f9f9f9;
-  display: flex;
+
+.record{
+  width: 100px;
+  height: 50px;
+}
+.weui-uploader__files{
+  height: 80px;
+  margin: 10px 0px;
+  border-top: 1px solid #e8e8e8;
   padding: 10px;
 }
-.c-img{
-  width: 20%;
-  display: flex;
-  justify-content: center;
-  height: 100%;
-}
-.c-img image{
-  width: 50%;
-}
-.all-text{
-  display: flex;
-  width: 80%;
-}
-.all-text text{
-  display: inline-block;
-}
-.box1{
-  width: 85%;
-}
-.box2{
-  width:13%;
-  font-size: 12px;
-  color: #909090;
-}
-.box1 view,.box2 view{
-  margin-bottom: 3px;
-}
-.c-content{
-  font-size: 32rpx;
-  }
-.c-upimg{
-  width: 50%;
-}
-.c-upimg image{
-  width: 100%;
-}
-.c-file{
-  background-color: #eeeeee;
-  border:1px solid #d4d4d4;
-  border-radius: 8px;
-  padding: 10px 15px;
-}
-.c-icon,.c-time{
-  width: 100%;
-  text-align:right;
-}
-.bottom-nav{
-  display: flex;
-}
-.into{
-  width: 85%;
-  color: #909090;
-  display:inline-block;
-  line-height: 40px;
-  margin-left: 10px;
-}
-.click{
-  width: 13%;
-}
-.click image{
-  width: 70%;
-  padding-top: 5px;
-}
+

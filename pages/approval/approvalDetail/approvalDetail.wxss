@@ -1,67 +1,73 @@
 /* pages/approval/approvalDetail/approvalDetail.wxss */
 page{
+  margin-bottom: 50px;
   width: 100%;
 }
-.main{
-   width: 100%;
-  margin-bottom:50px; 
+.main-body{
+  width: 100%;
   overflow: hidden;
 }
 .box{
-  width: 100%;
-  background-color: #fff;
-  padding: 10px 0px 10px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  border-bottom: 1px solid #f9f9f9;
+  background-color: #ffffff;
   
+  padding: 15px;
 }
-.box text{
+.box>.title{
+  font-weight: bold;
+  font-size: 18px;
+  text-align:center;
+}
+
+.box>.title text{
   display: inline-block;
-  margin-right: 10px;
+  padding-right: 10px;
+}
+.box>.info{
+  font-size: 15px;
+}
+.info>view{
+  width: 100%;
+  margin:10px 0px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.info text:first-child{
+  color: #808080;
+  width: 30%;
+  display: inline-block;
+
+}
+.info text:last-child{
+  width:70%;
+  display: inline-block;
+  text-align:right;
+}
+
+.blockw{
   color: #808080;
   font-size: 37rpx;
+  padding: 10px 0px;
+  padding-left: 20px;
+  display: block;
+  background: #fff;
+  border-bottom: 2px solid #e8e8e8;
 }
-.title{
- width: 20%;
-}
-.box input{
-  display: inline-block;
-  font-size: 34rpx; 
-  margin-left: 10px;
-}
-.date{
-  font-size: 34rpx;
-  margin-left: 10px;
-  /*color: #808080;*/
-}
-textarea{
-  font-size: 34rpx;
-  margin-left: 10px;
-  height: 100px;
-}
-.btn-size{
-  width: 80%;
-}
-
-.bottom-nav image{
-  width: 48px;
-  height: 100%;
-}
-
-/* 选择成功后的图片显示样式 */
-.imgBoxs{
+.box-sp{
   width: 100%;
-  height: 90px;
-  background-color:#ffffff;
-  padding: 10px 20px; 
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
 }
-.imgBox{
-  width: 20%;
-  height:100%;
+.box-sp image{
+  width: 50px;
+  height: 50px;
+  border-radius:50%; 
 }
-
-
-
-
+.box-sp text{
+  margin-left:10px; 
+  font-weight: bold;
+}

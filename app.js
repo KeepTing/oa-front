@@ -41,7 +41,10 @@ App({
     userInfo: null,
     host:"http://192.168.0.145:8080",  //服务器host
     qiniuHost:"http://p81iiyqk5.bkt.clouddn.com/",  //七牛云host
-    header: { 'Cookie': '' }
+    header: {
+       'Cookie': '',
+       'content-type':'application/json'
+    }
   },
 })
 

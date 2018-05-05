@@ -1,73 +1,72 @@
 <!--pages/notice/noticeDetail/noticeDetail.wxml-->
 <view class='main-body'>
-<view style='height:2px;'></view>
+
+<view class='spilt'></view>
 <view class='box'>
   <view class='title'>
-    <text>断网公告</text>
+    <text>{{title}}</text>
   </view>
-  <view class='info'>
+  <view class='box-content'>
+    <view>
+    <block wx:if="{{yc === true}}">
+   <view class='info1'>
+      <text>{{fromPeople}}</text>
+      <text>至</text>
+      <text class='topeople'>{{toPeople}}</text>
+  </view>
+  </block>
+  
+ 
+    </view>
+    <view bindtap='clicktab' style='color:#279bee;'>{{btntext}}</view>
+  </view>
+  <block class="down" wx:if="{{yc === false}}" >
+   <view class='info' animation="{{animation}}">
     <view>
       <text>发起人</text>
-      <text>王建东</text>
+      <text>{{fromPeople}}</text>
     </view>
     <view>
-      <text>发送给</text>
-      <text>山东鼎新有限公司</text>
+      <text style='float:left;'>发送给</text>
+      <text >{{toPeople}}</text>
     </view>
+  </view>
+  </block>
+  <view >
+   <view class='info'>
     <view>
       <text>公示期</text>
-      <text>山东鼎新有限公司</text>
+      <text>{{enddate}}</text>
     </view>
-    <view class='time'>9：20</view>
+    <view class='time'>23:59</view>
   </view>
   
   <view class='content'>
-  呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜呜
+  {{content}}
   </view>
+
+
+ <view class="weui-uploader__files">
+    <block wx:for="{{imageList}}">
+      <view class="weui-uploader__file">
+       <image class="weui-uploader__img" src="{{item}}" data-src="{{item}}" bindtap="previewImage">
+       </image>
+      </view>
+    </block>
+  </view>
+  <view class='record'>
+    <view hidden="{{currentTab!==0}}">
+      <image src='/image/record.png' bindtap="play"> </image>
+    </view>
+  </view>
+  
+  </view>
+
 </view>
-<view class='spilt'></view>
-<view class='comment'>
-  <view class='title'>
-  <text class='iconthumbs-o-up c-red'></text>
-  评论区
-  </view>
-  <view class='content'>
-    <view class='c-box'>
-      <view class='c-img'>
-      <image mode='widthFix' src='/pages/img/compropago.png'></image>
-    </view>
-    <view class='all-text'>
-      <view class='box1'>
-        <view class='c-name'>姓名</view>
-        <view class='c-content'> 
-        汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容
-        </view>
-        <view class='c-upimg'>
-          <image mode='widthFix' src='/pages/img/jt.jpg'></image>
-        </view>
-        <view class='c-file'>文件.txt</view>
-      </view>
-      <view class='box2'>     
-        <view class='c-time'>10:20</view>
-        <view class='c-icon'>
-          <text class='iconchat-bubble-dots c-blue'></text>
-        </view>
-      </view>
-    </view>
-    </view>
-
-
-
-
-
-  </view>
 </view>
 <!--底部导航-->
-<view class='bottom-nav'>
-  <view class='into' bindtap='clickToComment'>输入回复内容....</view>
-  <view class='click' bindtap='otherOper'>
-  <image mode='widthFix' src='/pages/img/compropago.png'></image>
-  </view>
-</view>
+
+<view class='nav' bindtap='otherOper' hidden='{{currentTab1!==0}}'>
+<view class='iconlist2'></view>
 </view>
 

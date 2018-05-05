@@ -6,15 +6,15 @@ Page({
     Info: [{
       src:'/pages/img/tx.jpg',
       name: "王笑笑",
-      num: '5',
       topic:'病假',
-      date:'2015-12-12'
+      date:'2015-12-12',
+      status:'审批中'
     }, {
         src: '/pages/img/tx.jpg',
-        name: "任务标题1",
-        num: '5',
+        name: "王笑笑",
         topic: '病假',
-        date: '2015-12-12'
+        date: '2015-12-12',
+        status: '审批中'
     }]
 
   },

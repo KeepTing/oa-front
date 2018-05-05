@@ -1,0 +1,43 @@
+<!--pages/attendance/monthRecord/monthRecord.wxml-->
+<view class='main'>
+<view class='select'>
+<view class="section">
+  <picker mode="date" value="{{date}}" fields="month" bindchange="bindDateChange">
+    <view class="picker">
+       {{date}} <text class='iconbtn iconcircle-down'></text>
+    </view>
+    
+  </picker>
+</view>
+</view>
+
+
+<view class='info'>
+<view>
+<text>出勤天数</text>
+<text>{{attenceAllDays}}天</text>
+</view>
+<view>
+<text>迟到</text>
+<text>{{lateDays}}次</text>
+</view>
+<view>
+<text>早退</text>
+<text>{{earlyDays}}次</text>
+</view>
+<view>
+<text>上班打卡</text>
+<text>{{upDays}}次</text>
+</view>
+<view>
+<text>下班打卡</text>
+<text>{{downDays}}次</text>
+</view>
+<view>
+<text>缺勤</text>
+<text>{{absenceDays}}次</text>
+</view>
+
+</view>
+
+</view>

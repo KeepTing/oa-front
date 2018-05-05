@@ -1,0 +1,8 @@
+<!--pages/task/selectedList/selectedList.wxml-->
+<view class='spilt'></view>
+<view class='boxcheck' wx:for="{{selectedList}}" >
+  <label  class="checkbox">
+      <text class='tx'>{{item.d_name}}</text>
+      <text class='name'>{{item.d_name}}</text>
+  </label>
+</view>

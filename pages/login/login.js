@@ -92,6 +92,8 @@ Page({
   },
   /*生命周期函数--监听页面加载*/
   onLoad: function () {
+
+   // console.log("09:00">"12:00");
 },
   /*生命周期函数--监听页面初次渲染完成 */
   onReady: function () {},

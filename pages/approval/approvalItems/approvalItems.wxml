@@ -16,8 +16,8 @@
         <text class='r-date'>{{item.date}}</text>
       </view>
       <view> 
-        <view class='r-cu'>请假天数：{{item.num}}</view>
-        <view class='r-content'>{{item.topic}}</view>
+        <view class='r-cu'>审批类型：{{item.topic}}</view>
+        <view class='r-content'>{{item.status}}</view>
       </view>
     </view>
   </view>

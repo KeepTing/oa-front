@@ -150,7 +150,7 @@ Page({
         url: host + '/task/complete/' + that.data.id,
         dataType: 'text',
         method: 'put',
-        header, header,
+        header:header,
         success: function (res) {
           if (res.data == "no_login") {
             wx.redirectTo({
