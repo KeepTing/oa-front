@@ -6,27 +6,77 @@
 <!--进行中-->  
 <view hidden="{{currentTab!==0}}">  
 <view class='spilt'></view>
-  <view wx:for='{{Info}}' class='box' bindtap='navtoDetail'>
+  <view wx:for='{{Info}}' class='box' data-id="{{item.approval_id}}"  data-typeapproval="{{item.type}}" bindtap='navtoDetail'>
     <view class='r-img'>
-      <image mode='widthFix' src='{{item.src}}'></image>
+      <image  src='{{item.headImg}}'></image>
     </view>
     <view class='all-text'>
       <view>
-        <text class='r-name'>{{item.name}}</text>
-        <text class='r-date'>{{item.date}}</text>
+        <text class='r-name'>{{item.fromUser}}</text>
+        <text class='r-date'>{{item.createTime}}</text>
       </view>
       <view> 
-        <view class='r-cu'>审批类型：{{item.topic}}</view>
-        <view class='r-content'>{{item.status}}</view>
+        <view class='r-cu'>{{item.type}}</view>
+        <view class='r-content'>
+            <block wx:if='{{item.status==0}}'>
+        审批中
+        </block>
+        <block wx:elif='{{item.status==1}}'>
+        已通过
+        </block>
+        <block wx:elif='{{item.status==2}}'>
+        未通过
+        </block>
+        
+        </view>
+      </view>
+    </view>
+  </view>
+
+<navigator url='/pages/approval/replaceCardDetail/replaceCardDetail'>
+
+</navigator>
+<navigator url='/pages/approval/expanseDetail/expanseDetail'>
+
+</navigator>
+<navigator url='/pages/approval/overWorkDetail/overWorkDetail'>
+
+</navigator>
+</view>  
+  
+<!--已完成-->  
+<view hidden="{{currentTab!==1}}" bindtap='toclick'>  
+
+  <view class='spilt'></view>
+  <view wx:for='{{Info1}}' class='box' bindtap='navtoDetail' data-id="{{item.approval_id}}" data-typeapproval="{{item.type}}"hidden="{{current!==1}}">
+    <view class='r-img'>
+      <image  src='{{item.headImg}}'></image>
+    </view>
+    <view class='all-text'>
+      <view>
+        <text class='r-name'>{{item.fromUser}}</text>
+        <text class='r-date'>{{item.createTime}}</text>
+      </view>
+      <view> 
+        <view class='r-cu'>{{item.type}}</view>
+        <view class='r-content'>
+        <block wx:if='{{item.status==0}}'>
+        审批中
+        </block>
+        <block wx:elif='{{item.status==1}}'>
+        已通过
+        </block>
+        <block wx:elif='{{item.status==2}}'>
+        未通过
+        </block>
+        </view>
       </view>
     </view>
   </view>
 
 
+
+
 </view>  
-  
-<!--已完成-->  
-<view hidden="{{currentTab!==1}}">  
-  tab_02  
-</view>  
+
  <view class='add' bindtap='addApp'>+</view>

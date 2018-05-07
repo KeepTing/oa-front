@@ -1,16 +1,15 @@
-// pages/approval/replaceCard/replaceCard.js
+// pages/approval/addExpanse/addExpanse.js
 var util = require('../../../utils/util.js');
 var host = getApp().globalData.host;
 
 var header = getApp().globalData.header; //获取app.js中的请求头
 Page({
   data: {
-    array: ['上班', '下班'],
+    array: ['差旅费', '交通费','招待费','礼品费','通讯费'],
     index: 0,
     date: '',
     topeople: '徐富豪',//审批人
-    toid: '',
-    enddate: util.formatTime(new Date()),
+    toid:''
   },
 
   //类型
@@ -35,17 +34,20 @@ Page({
   //提交表单数据
   formSubmit: function (e) {
     var that = this;
-    var formData = e.detail.value; //获取表单所有input的值
-    if (e.detail.value.as_desc.length==0){
+    var formData = e.detail.value; 
+    if (e.detail.value.re_money.length==0){
       wx.showToast({
-        icon: 'none',
-        title: '填写补卡理由',
+        icon:'none',
+        title: '请填写报销金额',
       })
-    }
-    else{
-      //提交补卡审批
+    } else if (e.detail.value.re_desc.length == 0){
+      wx.showToast({
+        title: '请填写报销说明',
+      })
+    }else{
+      //提交报销审批
       wx.request({
-        url: host + '/attencesign/add',
+        url: host + '/reimburse/add',
         header: header,
         method: 'POST',
         data: formData,
@@ -64,6 +66,7 @@ Page({
               })
             }
           }
+
         }
       });
     }
@@ -72,7 +75,7 @@ Page({
   onLoad: function (e) {
     var that = this;
     wx.setNavigationBarTitle({
-      title: "补卡申请"
+      title: "补卡"
     });
     wx.setNavigationBarColor({
       frontColor: '#ffffff',
@@ -82,6 +85,7 @@ Page({
     that.setData({
       date: time,//设置初始值
     })
+
 
     //获取当前用户的上级
     wx.request({
@@ -94,12 +98,17 @@ Page({
         console.log(res.data)
         var superUser = res.data;
         if (superUser != null) {
-          console.log(superUser);
+          wx.setStorageSync("superUser", superUser);
           that.setData({
-            topeople: superUser.username,
-            toid: superUser.eid
+            o_toid: superUser.eid
           })
         }
+
+        that.setData({
+          topeople: superUser.username,
+          toid: superUser.eid
+        })
+
       }
     });
   }

@@ -2,18 +2,24 @@
 <view class='box'>
 <view>
   <navigator url='/pages/approval/addApproval/addApproval'>
-    <text class='title'>请假</text><text class='icons iconplex'></text>
+    <text class='title'>请假申请</text><text class='icons iconplex'></text>
   </navigator> 
 </view>
 <view>
-  <navigator url='/pages/approval/addApproval/addApproval'>
-    <text class='title'>补卡</text><text class='icons iconplex'></text>
+  <navigator url='/pages/approval/replaceCard/replaceCard'>
+    <text class='title'>补卡申请</text><text class='icons iconplex'></text>
   </navigator> 
 </view>
 <view>
-  <navigator url='/pages/approval/addApproval/addApproval'>
-    <text class='title'>调休</text><text class='icons iconplex'></text>
-  </navigator> 
+  <navigator url='/pages/approval/addExpanse/addExpanse'>
+    <text class='title'>报销申请</text><text class='icons iconplex'></text>
+  </navigator>
+
+</view>
+<view>
+  <navigator url='/pages/approval/overWork/overWork'>
+    <text class='title'>加班申请</text><text class='icons iconplex'></text>
+  </navigator>  
 </view>
 
  

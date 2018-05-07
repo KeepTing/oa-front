@@ -1,4 +1,4 @@
-/* pages/approval/replaceCard/replaceCard.wxss */
+/* pages/approval/overWork/overWork.wxss */
 page{
   width: 100%;
 }
@@ -24,10 +24,8 @@ page{
  margin-right: 10px;
 
 }
-
 .title{
  width: 20%;
-
 }
 .blockw{
   color: #808080;
@@ -51,7 +49,8 @@ page{
 }
 textarea{
   font-size: 34rpx;
-  height: 125px;
+  margin-left: 10px;
+  height: 100px;
 }
 .btn-size{
   width: 80%;
@@ -61,15 +60,9 @@ textarea{
   width: 48px;
   height: 100%;
 }
-.box>.topeople{
- display: inline-block;
-  font-size: 34rpx; 
-  margin-left: 10px;
-  width: 60%;
-  color:black; 
-}
-.box>.hidden{
-  width: 5%;
+.up{
+  position: relative;
+  top: -348px;
 }
 
 

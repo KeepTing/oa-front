@@ -1,0 +1,8 @@
+<!--pages/address/staffList/staffList.wxml--> 
+<view class='boxcheck' wx:for="{{items}}" >
+  <label  class="checkbox">
+      <text class='tx'>{{item.username}}</text>
+      <text class='name'>{{item.username}}</text>
+  </label>
+ <text class='btnstaff iconplex' data-id='{{item.id}}' bindtap='clicktostaff'></text>
+</view>

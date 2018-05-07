@@ -8,7 +8,7 @@ page{
   margin:-1px;
 }  
 .add{
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   right: 10px;
   width: 50px;
@@ -68,7 +68,8 @@ page{
   height: 100%;
 }
 .r-img image{
-  width: 60%;
+  width:50px;
+  height: 50px;
   border-radius:50%; 
 }
 .all-text{

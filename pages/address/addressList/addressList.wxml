@@ -1,0 +1,10 @@
+<!--pages/addressList/addressList.wxml-->
+
+<view class='boxcheck' wx:for="{{items}}" >
+
+  <label  class="checkbox">
+      <text class='tx'>{{item.d_name}}</text>
+      <text class='name'>{{item.d_name}}</text>
+  </label>
+ <text class='btnstaff iconplex' data-id='{{item.id}}' bindtap='clicktostaff'></text>
+</view>

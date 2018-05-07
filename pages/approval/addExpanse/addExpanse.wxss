@@ -1,4 +1,4 @@
-/* pages/approval/replaceCard/replaceCard.wxss */
+/* pages/approval/addExpanse/addExpanse.wxss */
 page{
   width: 100%;
 }
@@ -24,7 +24,6 @@ page{
  margin-right: 10px;
 
 }
-
 .title{
  width: 20%;
 

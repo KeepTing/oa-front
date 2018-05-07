@@ -1,3 +1,4 @@
+// pages/approval/overWork/overWork.js
 var util = require('../../../utils/util.js');
 var judges = require('../../../utils/judge.js');
 
@@ -6,7 +7,6 @@ var host = getApp().globalData.host;
 var header = getApp().globalData.header; //获取app.js中的请求头
 Page({
   data: {
-    array: ['事假', '病假', '婚假', '产假', '丧假', '其他'],
     timeArray: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
     timeArray1: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
     index: 0,
@@ -20,8 +20,8 @@ Page({
     enddate: '',
     judge: '',
     num: '0',
+    toid:'',
     topeople: '',//审批人
-    toid: 0,
     start: '',//最终的开始时间
     end: '',//最终的结束时间
   },
@@ -91,8 +91,7 @@ Page({
       });
       that.setData({
         start: start,
-        num: 0,
-        index1:0
+        num: 0
       });
     } else {
       that.setData({
@@ -160,8 +159,7 @@ Page({
       });
       that.setData({
         end: end,
-        num: 0,
-        index2:0
+        num: 0
       });
     } else {
       that.setData({
@@ -172,55 +170,64 @@ Page({
     console.log("天数" + num1);
     console.log('结果' + judge1);
   },
+  //选择审批人
+  clickto: function () {
+    wx.navigateTo({
+      url: '/pages/approval/selectedList/selectedList',
+    })
+  },
 
   //提交表单数据
   formSubmit: function (e) {
     var that = this;
-
-    var startDate = that.data.startdate;
-    var endDate = that.data.enddate;
-    var endTime = that.data.timeArray1[that.data.index2];
-    var startTime = that.data.timeArray[that.data.index1];
-    var start = startDate + " " + startTime;
-    var end = endDate + " " + endTime;
-    that.setData({
-      start:start,
-      end:end
-    });
-    
-    var formData = e.detail.value; //获取表单所有input的值
-    console.log(formData.taskDate);
-
-    //提交请假审批
-    wx.request({
-      url: host + '/offwork/add',
-      header: header,
-      method: 'POST',
-      data:formData,
-      dataType: 'text',
-      success: function (res) {
-        var result=res.data;
-        if(result!=null){
-          if(result=="no_login"){
-            wx.redirectTo({
-              url: '/pages/login/login',
-            })
+    // var startDate = that.data.startdate;
+    // var startTime = that.data.timeArray[that.data.index1];
+    // console.log("start:" + startDate +" "+ startTime);
+    var formData = e.detail.value; 
+    if (e.detail.value.ot_desc.length==0){
+        wx.showToast({
+          icon: 'none',
+          title: '请填写说明情况',
+        })
+   }else{
+      //提交请假审批
+      wx.request({
+        url: host + '/overtime/add',
+        header: header,
+        method: 'POST',
+        data: formData,
+        dataType: 'text',
+        success: function (res) {
+          var result = res.data;
+          if (result != null) {
+            if (result == "no_login") {
+              wx.redirectTo({
+                url: '/pages/login/login',
+              })
+            }
+            else if (result == "true") {
+              wx.navigateBack({
+                delta: 2
+              })
+            }
           }
-          else if(result=="true"){
-            wx.navigateBack({
-              delta:2
-            })
-          }
+
         }
-
-      }
-    });
+      });
+   }
+  
+    
   },
   onLoad: function (e) {
     var that = this;
     wx.setNavigationBarTitle({
-      title: "请假"
+      title: "加班申请"
     });
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#515e66',
+    })
+
 
     //获取当前用户的上级
     wx.request({
@@ -242,22 +249,19 @@ Page({
     });
 
 
-
     var time = util.formatTime(new Date());
     that.setData({
       startdate: time,//设置初始值
       enddate: time,//设置初始值
+      topeople: time //填入审批人姓名
     })
     //进入页面未选择开始时间
     var startDate = that.data.startdate;
-    var endDate = that.data.enddate;
-    var endTime = that.data.timeArray1[that.data.index2];
     var startTime = that.data.timeArray[that.data.index1];
+    console.log("start:" + startDate + " " + startTime);
     var start = startDate + " " + startTime;
-    var end = endDate + " " + endTime;
     that.setData({
-      start: start,
-      end: end
+      start: start
     });
     console.log("onload start:" + that.data.start);
   }

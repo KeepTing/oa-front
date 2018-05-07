@@ -1,42 +1,33 @@
-<!--pages/approval/addApproval/addApproval.wxml-->
+<!--pages/approval/overWork/overWork.wxml-->
 <view class='main' >
 <form  bindsubmit="formSubmit" bindreset="formReset">   
   <view class='spilt'></view>
-  <view class='box'>
-    <text class="c-gray iconbookmarks"></text>
-    <text class='title'>请假类型</text>
-        <picker name='type' class='date'  bindchange="bindPickerChange" value="{{index}}"  range="{{array}}">
-    <view class="picker">
-      {{array[index]}}
-    </view>
-  </picker>
-  </view> 
-     <view class='box'>
+<view class='box'>
     <text class="c-gray iconuser-add"></text>
     <text class='title'>审批人</text>
-    <text >{{topeople}}</text>
-  </view>
-  <input hidden='hidden' name="o_toid" value='{{toid}}'></input>
+    <input type='text' value='{{topeople}}'></input>
+</view>
+  <input hidden='hidden' name="ot_toid" value='{{toid}}'></input>
   <view class='spilt'></view>
   <view style='width:100%;height:82px;'></view>
   <view class='box'>
     <text class="c-gray iconcalendar"></text>
-    <text class='title'>请假时长</text>
+    <text class='title'>加班时长</text>
     <view bindlongtap='changeNum'>
       <input type='text' name="hours" value='{{num}}'></input>
     </view>
   </view> 
-
+<input hidden='hidden' name="ot_toid" value='{{toid}}'></input>
 
   <view class='spilt'></view>
-  <view class='blockw'>请假理由</view>
+  <view class='blockw'>说明情况</view>
   <view class='box'>
-    <textarea name='o_desc'/>
+    <textarea name='ot_desc'/>
   </view>
 
   
    <view class='spilt'></view>
-   <input hidden='hidden'name="startTime" value='{{start}}'></input>
+   <input hidden='hidden' name="startTime" value='{{start}}'></input>
    <input hidden='hidden' name="endTime" value='{{end}}'></input>
    <button class='btn btn-size' formType="submit">提交</button> 
    </form>

@@ -45,17 +45,23 @@
     "pages/notice/noticeItems/noticeItems",
     "pages/report/reportItems/reportItems",
     "pages/approval/addApproval/addApproval",
-    "pages/approval/replaceCard/replaceCard",
     "pages/approval/approvalItem/approvalItem",
     "pages/approval/approvalDetail/approvalDetail",
-    "pages/approval/ wipeOut/wipeOut",
     "pages/task/taskList/taskList",
-    "pages/dept/staff/staff"
+    "pages/dept/staff/staff",
+    "pages/address/addressList/addressList",
+    "pages/approval/replaceCard/replaceCard",
+    "pages/approval/replaceCardDetail/replaceCardDetail",
+    "pages/approval/addExpanse/addExpanse",
+    "pages/approval/expanseDetail/expanseDetail",
+    "pages/approval/overWork/overWork",
+    "pages/approval/overWorkDetail/overWorkDetail",
+    "pages/address/staffList/staffList"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "微办公平台",
+    "navigationBarTitleText": "企办办",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -71,13 +77,7 @@
         "iconPath": "pages/img/menu/folder.png"
       },
       {
-        "pagePath": "pages/index/index",
-        "text": "企信",
-        "selectedIconPath": "pages/img/menu/mail-envelope-open.png",
-        "iconPath": "pages/img/menu/mail-envelope-closed.png"
-      },
-      {
-        "pagePath": "pages/me/me",
+        "pagePath": "pages/address/addressList/addressList",
         "text": "通讯录",
         "selectedIconPath": "pages/img/menu/notebook-text.png",
         "iconPath": "pages/img/menu/notebook-text.png"

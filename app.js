@@ -43,7 +43,6 @@ App({
     qiniuHost:"http://p81iiyqk5.bkt.clouddn.com/",  //七牛云host
     header: {
        'Cookie': '',
-       'content-type':'application/json'
     }
   },
 })

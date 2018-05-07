@@ -1,13 +1,11 @@
-<!--pages/approval/approvalDetail/approvalDetail.wxml-->
-
+<!--pages/approval/overWorkDetail/overWorkDetail.wxml-->
 <view class='addreason' hidden='{{current==1}}' animation="{{animation}}">
- 
  <view class='spilt' style='height:20px;'></view>
- <form >
+ <form>
 
   <view class='blockw'>{{title}}理由</view>
   <view class='box'>
-  <textarea maxlength="1000" bindinput ="reason" name="reason" placeholder='请填入驳回理由'/>
+  <textarea  name='content'maxlength="1000" bindinput ="reason" placeholder='请填入驳回理由'/>
   </view>
   <view class='spilt' style='height:10px;'></view>
 <text class='anniu anniu-color' style='float:right;margin-right:20px;' bindtap='OK'>确定</text>
@@ -20,19 +18,13 @@
   <view class='spilt'></view>
   <view class='box'>
     <view class='title'>
-       <view><text>{{fromname}}的请假申请</text>   </view>
-     
-      <view style="display:{{currentDel}}"> 
-      <image src='/image/trash.png'  bindtap='_delete' style=''></image></view>
-    </view>
-
+       <view><text>{{fromname}}的加班申请</text>   </view>
+          <view style="display:{{currentDel}}"> 
+    <image src='/image/trash.png' bindtap='_delete' style=''></image>
+       </view>
     
-   
+    </view>
   <view class='info'>
-      <view>
-        <text>请假类型</text>
-        <text>{{array[type]}}</text>
-      </view>
       <view>
         <text>开始时间</text>
         <text>{{startTime}}</text>
@@ -52,7 +44,7 @@
   </view>
   </view>
   <view class='spilt'></view>
-  <view class='blockw'>请假理由</view>
+  <view class='blockw'>加班说明</view>
   <view class='box'>
   {{content}} 
   </view>
@@ -65,20 +57,19 @@
       <text>{{status}}</text>
     </view>
   </view>
- <view class='spilt'></view>
+<view class='spilt'></view>
  <view hidden='{{current1==1}}'>
   <view class='blockw'>驳回理由</view>
   <view class='box'>
   {{reason}} 
   </view>
  </view>
- 
-  </view>
-
+ </view>
 <view class='bottom-nav' hidden="{{btn==0}}">
   <text class='anniu' bindtap='yesClickto'>批准</text>
   <text class='anniu anniu-color' data-title="驳回" bindtap='noClickto'>驳回</text>
 </view>
+
 
 
 

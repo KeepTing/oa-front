@@ -1,0 +1,82 @@
+<!--pages/approval/expanseDetail/expanseDetail.wxml-->
+<view class='addreason' hidden='{{current==1}}' animation="{{animation}}">
+ 
+ <view class='spilt' style='height:20px;'></view>
+ <form>
+
+  <view class='blockw'>{{title}}理由</view>
+  <view class='box'>
+  <textarea name='content'maxlength="1000" bindinput ="reason" placeholder='请填入驳回理由'/>
+  </view>
+  <view class='spilt' style='height:10px;'></view>
+<text class='anniu anniu-color' style='float:right;margin-right:20px;' bindtap='OK'>确定</text>
+ 
+ </form>
+ </view>
+
+<view class='main-body' hidden='{{current==0}}'>
+
+<view class='spilt'></view>
+<view class='box'>
+  <view class='title'>
+       <view><text>{{fromname}}的请假申请</text>   </view>
+       <view style="display:{{currentDel}}"> 
+    <image src='/image/trash.png'  bindtap='_delete' style=''></image>
+    </view>
+    </view>
+<view class='info'>
+    <view>
+      <text>报销类型</text>
+      <text>{{type}}</text>
+    </view>
+    <view>
+      <text>发生日期</text>
+      <text>{{re_time}}</text>
+    </view>
+     <view>
+      <text>费用金额</text>
+      <text>{{money}}元</text>
+    </view>
+  </view>
+<view>
+</view>
+</view>
+<view class='spilt'></view>
+<view class='blockw'>费用说明</view>
+<view class='box'>
+{{content}} 
+</view>
+<view class='spilt'></view>
+<view class='blockw'>审批流程</view>
+<view class='box'>
+  <view class='box-sp'>
+    <image src='{{src}}'></image>
+    <text>{{toname}}</text>
+    <text>{{status}}</text>
+  </view>
+</view>
+
+  </view>
+
+<view class='bottom-nav'hidden="{{btn==0}}">
+  <text class='anniu' bindtap='yesClickto' >批准</text>
+  <text class='anniu anniu-color' data-title="驳回" bindtap='noClickto'>驳回</text>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

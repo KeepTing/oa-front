@@ -35,10 +35,6 @@ Page({
     currentTab: 0,
     count: [1, 2, 3, 4, 5, 6, 7, 8, 9],
     imageList: [
-      'http://p81iiyqk5.bkt.clouddn.com/_task_img_34b2f9f3-a12f-4df2-a16b-8243d5baa992',
-      'http://p81iiyqk5.bkt.clouddn.com/_task_img_34b2f9f3-a12f-4df2-a16b-8243d5baa992',
-
-
     ],
     yc:true,
     btntext:'显示',
@@ -202,14 +198,20 @@ Page({
       dataType: 'json',
       success: function (res) {
         console.log(res.data)
-        var file = JSON.parse(res.data.n_file);
-        var imgs = file.image;
-        var voice = file.voice;
-        if (voice == null || voice == "") {
-          that.setData({
-            currentTab: 1
-          })
+        var file={};
+        var imgs="";
+        var voice="";
+        if (res.data.n_file != null && res.data.n_file!=""){
+          file = JSON.parse(res.data.n_file);
+          imgs = file.image;
+          voice = file.voice;
+          if (voice == null || voice == "") {
+            that.setData({
+              currentTab: 1
+            })
+          } 
         }
+        
 
         //获取图片链接
         var imgUrls = imgs.split(",");
@@ -217,7 +219,6 @@ Page({
         for (var i = 1; i < imgUrls.length; i++) {
           imgUrls[i] = qiniuHost + imgUrls[i];
           imgss.push(imgUrls[i]);
-
         }
 
         var userList = res.data.n_toUserList;

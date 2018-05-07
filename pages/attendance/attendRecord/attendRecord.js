@@ -211,7 +211,7 @@ const conf = {
             upstatus: up,
             uptime: startTime,
             downstatus: down,
-            downtime: attence.endTime,
+            downtime: endTime,
           });  
         }
         else {

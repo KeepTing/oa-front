@@ -1,10 +1,10 @@
-<!--pages/approval/replaceCard/replaceCard.wxml-->
+<!--pages/approval/addExpanse/addExpanse.wxml-->
 <view class='main' >
 <form  bindsubmit="formSubmit" bindreset="formReset">   
   <view class='spilt'></view>
   <view class='box'>
     <text class="c-gray iconbookmarks"></text>
-    <text class='title'>补卡类型</text>
+    <text class='title'>报销类型</text>
         <picker name='type' class='date'  bindchange="bindPickerChange" value="{{index}}"  range="{{array}}">
     <view class="picker">
       {{array[index]}}
@@ -12,35 +12,40 @@
   </picker>
   </view> 
  <view class='box'>
-    <text class="c-gray iconcalendar"></text>
-    <text class='title'>补卡日期</text>
-    <picker mode="date" name="signDate" value="{{date}}" end="{{enddate}}"  bindchange="bindDateChange">
+    <text class="c-gray iconclock"></text>
+    <text class='title'>发生日期</text>
+    <picker mode="date" name="re_time" value="{{date}}" bindchange="bindDateChange">
     <view class="picker">
      {{date}}
     </view>
   </picker>
-  <text style='font-size:10px;margin-left:10px;'>今天之前的日期，
-  未进行考勤，不可选择</text>
   </view>
+  <view class='box'>
+    <text class="c-gray iconquill"></text>
+    <text class='title'>费用金额</text>
+    <input  type='number' name="re_money" ></input>
+  
+  </view> 
 
   <view class='spilt'></view>
   <view class='box'>
-    <text class="c-gray iconuser-add"></text>
+    <text class="c-gray iconuser-check"></text>
     <text class='title'>审批人</text>
     <text class='topeople'> {{topeople}}</text>
-    <input class='hidden' type='text' name="as_toid" value='{{toid}}' hidden='hidden'></input>
+    <input class='hidden' name="re_toid"  type='text' hidden='hidden' value='{{toid}}'></input>
   
   </view> 
 
 
   <view class='spilt'></view>
-  <view class='blockw'>补卡理由</view>
+  <view class='blockw'>费用说明</view>
   <view class='box'>
-    <textarea name='as_desc'/>
+    <textarea name='re_desc'/>
   </view>
    <view class='spilt'></view>
    <view class='spilt'></view>
    <button class='btn btn-size' formType="submit">提交</button> 
    </form>
 </view>
+
 
