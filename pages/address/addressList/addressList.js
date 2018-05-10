@@ -1,4 +1,7 @@
 // pages/addressList/addressList.js
+var host = getApp().globalData.host;
+
+var header = getApp().globalData.header; //获取app.js中的请求头
 Page({
 
   /**
@@ -19,7 +22,7 @@ Page({
     var header = getApp().globalData.header; //获取app.js中的请求头
     //发送任务id根据id查询
     wx.request({
-      url: 'http://192.168.0.145:8080/dept/all',
+      url: host+'/dept/all',
       header: header,
       method: 'GET',
       dataType: 'json',

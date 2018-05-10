@@ -28,7 +28,7 @@
    <view class='box'>
     <text class="c-gray iconalarm"></text>
     <text class='title'>截至时间</text>
-    <picker name='endTime' mode="date" class='date' value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <picker name='endTime' mode="date" class='date' value="{{date}}" bindchange="bindDateChange">
     <view class="picker">
       {{date}}
     </view>

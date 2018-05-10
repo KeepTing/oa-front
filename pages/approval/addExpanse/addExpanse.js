@@ -75,7 +75,7 @@ Page({
   onLoad: function (e) {
     var that = this;
     wx.setNavigationBarTitle({
-      title: "补卡"
+      title: "报销申请"
     });
     wx.setNavigationBarColor({
       frontColor: '#ffffff',

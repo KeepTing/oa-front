@@ -1,1 +1,36 @@
 /* pages/me/meInfo/meInfo.wxss */
+.main{
+  width: 100%;
+  font-family: '宋体';
+}
+.main .title{
+  padding: 15px;
+  color: #888888;
+  font-size: 15px;
+  height: 40px;
+  line-height: 40px;
+  width: 50%;
+}
+.main .info{
+  width: 100%;
+  background-color: #ffffff;
+  padding: 0px 10px;
+  display: block;
+}
+.main .box{
+  width: 96%;
+  height: 40px;
+  line-height: 40px;
+  color: #333;
+  border-bottom: 1px solid #fafafa;
+}
+
+.main .box>view{
+  width: 38%;
+  display: inline-block;
+
+}
+.main .box>view .picker{
+  width: 100%;
+
+}

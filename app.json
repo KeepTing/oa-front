@@ -24,12 +24,18 @@
   
 
     "pages/task/taskIndex/taskIndex",
+
     "pages/me/staffInfo/staffInfo",
     "pages/me/meInfo/meInfo",
+    "pages/me/alterPwd/alterPwd",
+    "pages/me/alterTX/alterTX",
+    "pages/me/meItems/meItems",
+    
+    
+      
     "pages/approval/approvalItems/approvalItems",
     "pages/advise/advise",
-    "pages/me/me",
-    "pages/me/meItems/meItems", 
+ 
     "pages/schedule/addSchedule/addSchedule",
     "pages/schedule/scheduleDetail/scheduleDetail",
     "pages/notice/noticeDetail/noticeDetail",
@@ -38,6 +44,7 @@
 
     "pages/report/newReport/newReport",
     "pages/report/addReport/addReport",
+    "pages/report/addMonth/addMonth",
     "pages/report/reportDetail/reportDetail",
     "pages/addTask/addTask",
     "pages/logs/logs",

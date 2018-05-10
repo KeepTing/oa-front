@@ -62,7 +62,7 @@ textarea{
 }
 .up{
   position: relative;
-  top: -348px;
+  top: -362px;
 }
 
 

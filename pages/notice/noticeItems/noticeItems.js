@@ -6,10 +6,10 @@ Page({
   data: {
     rInfo: [{
       id:'',
-      headImg:'/pages/img/tx.jpg',
-      fromUser: '王建东',
-      createTime: '2014-12-12',
-      title:'断电公关稿',
+      headImg:'',
+      fromUser: '',
+      createTime: '',
+      title:'',
     }],
     currentTab: 1
   },

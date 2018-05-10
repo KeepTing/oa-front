@@ -31,14 +31,7 @@
     </view>
     <span class="pot">3-9</span>
   </navigator>
-  <navigator class='box' url="/pages/advise/advise?title=客户管理通知">
-    <span class="c-red iconpie-chart"></span>
-    <view class='all-text'>
-      <view class='adbig-title'>客户管理通知</view>
-      <view class='adsmall-title'>客户管理通知</view>
-    </view>
-    <span class="pot">2-6</span>
-  </navigator>
+
   </view>
 </view>
 
@@ -82,10 +75,6 @@
       <span class="c-red iconlocation"></span>
       <text>考勤</text>
     </navigator>
-    <navigator class='flex-item' url="/pages/schedule/meSchedule/meSchedule?title=日程" hover-class="navigator-hover">
-      <span class="c-green1 iconcalendar"></span>
-      <text>日程</text>
-    </navigator>
     <navigator class='flex-item' url="/pages/notice/noticeItems/noticeItems?title=公告" hover-class="navigator-hover">
       <span class="c-yellow iconprofile"></span>
       <text>公告</text>
@@ -94,10 +83,7 @@
       <span class="c-orangle iconpen"></span>
       <text>审批</text>
     </navigator>
-    <navigator class='flex-item' url="/pages/task/task?title=客户管理" hover-class="navigator-hover">
-      <span class="c-red iconpie-chart"></span>
-      <text>客户管理</text>
-    </navigator>
+
     <view bindtap="a" class='flex-item'>
       <text >+</text>
     </view>  
@@ -119,19 +105,14 @@
          </view>
          汇报
         </view>
-         <view class='m-flex'>
+         <view class='m-flex' bindtap='toattence'>
          <view class='flex-icon b-red'>
           <text class='iconlocation m-size'></text>
          </view>
          考勤
         </view>
-         <view class='m-flex'>
-         <view class='flex-icon b-green'>
-          <text class='iconcalendar m-size'></text>
-         </view>
-         日程
-        </view>
-         <view class='m-flex'>
+        
+         <view class='m-flex' bindtap='toapproval'>
          <view class='flex-icon b-orangle'>
           <text class='iconpen m-size'></text>
          </view>

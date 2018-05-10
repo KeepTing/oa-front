@@ -1,6 +1,7 @@
+// pages/report/addMonth/addMonth.js
 // pages/report/addReport/addReport.js
-var util = require('../../../utils/util.js'); 
-var getWeek = require('../../../utils/getWeek.js'); 
+var util = require('../../../utils/util.js');
+var getWeek = require('../../../utils/getWeek.js');
 var host = getApp().globalData.host;
 
 var header = getApp().globalData.header; //获取app.js中的请求头
@@ -8,18 +9,15 @@ Page({
   data: {
     index: 0,
     flag: true,
-    array:[],
-    toid:'',
-    topeople:'',//汇报给
+    months: util.formatMonth(new Date()),
+    toid: '',
+    array: [],
+    topeople: '',//汇报给
   },
   onLoad: function (e) {
-    var that = this; 
+    var that = this;
     wx.setNavigationBarTitle({
-      title: "周报"
-    })
-    console.log(getWeek.myArray);
-    that.setData({
-        array: getWeek.myArray
+      title: "月报"
     })
     //获取当前用户的上级
     wx.request({
@@ -39,20 +37,18 @@ Page({
         }
       }
     });
-
+   
   },
-  bindWeekChange: function (e) {
-    console.log("week")
+  bindMonthChange: function (e) {
+    console.log(e.detail.value)
     this.setData({
-      index: e.detail.value
+      months: e.detail.value
     })
   },
- 
   //提交表单数据
   formSubmit: function (e) {
     var that = this;
-    // e.detail.value.topeople=that.data.topeople;
-    e.detail.value.timeRange = that.data.array[that.data.index];
+    e.detail.value.topeople = that.data.topeople;
     var formData = e.detail.value; //获取表单所有input的值
     console.log(formData);
     //提交汇报
@@ -79,6 +75,6 @@ Page({
 
       }
     });
-  }
- 
+  },
+
 })

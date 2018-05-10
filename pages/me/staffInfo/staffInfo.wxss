@@ -118,7 +118,7 @@ page{
   color: #cccccc;
 }
 .qt-phone{
-  width: 30%;
+  width: 75%;
 }
 .xq-btn{
   width:45%;

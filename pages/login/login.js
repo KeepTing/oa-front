@@ -88,7 +88,7 @@ Page({
       duration: 2000
     })
   } 
-
+  
   },
   /*生命周期函数--监听页面加载*/
   onLoad: function () {
@@ -100,7 +100,7 @@ Page({
   /* 生命周期函数--监听页面显示*/
   onShow: function () {
     wx.setNavigationBarTitle({
-      title: "登录-微办公平台"
+      title: "登录-企办办平台"
     })
   },
   /*生命周期函数--监听页面隐藏*/

@@ -248,9 +248,14 @@ Page({
         success: function (res) {
           
           if(JSON.stringify(res.data)=='true'){
+
+            //此处跳转问题
+            // wx.navigateBack({
+            //   url: '/pages/task/taskIndex/taskIndex'
+            // })
             wx.redirectTo({
               url: '/pages/task/taskIndex/taskIndex'
-            })
+            }) 
           //console.log("水电费水电费");
           }
           console.log(res.data)

@@ -1,19 +1,43 @@
-// pages/me/meItems/meItems.js
+// pages/me/meItems/meItems.
+var qiniuHost=getApp().globalData.qiniuHost;
+
 Page({
   data: {
-    taskInfo: [{
-      title: "任务标题3",
-      dateTime: '截至时间3'
-    }, {
-      title: "任务标题2",
-      dateTime: '截至时间2'
-    }]
+    // taskInfo: [{
+    //   title: "任务标题3",
+    //   dateTime: '截至时间3'
+    // }, {
+    //   title: "任务标题2",
+    //   dateTime: '截至时间2'
+    // }]
+    username:'',
+    job:'',
+    headImg:'',
+  },
+  exit:function(){
+    wx.reLaunch({
+      url: '/pages/login/login',
+    })
   },
   onLoad: function (e) {
  
+    var that=this;
+
     wx.setNavigationBarTitle({
       title: '我'
     })
+
+    var user=wx.getStorageSync("user");
+    
+    if(user!=null){
+      that.setData({
+        username:user.username,
+        headImg:qiniuHost+user.image,
+        job:user.job
+      })
+
+      // console.log(that);
+    }
 
   },
   clickto: function (e) {

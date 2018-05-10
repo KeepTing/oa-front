@@ -74,7 +74,7 @@ page{
    display: flex;
    flex-wrap:wrap;
    margin: 0 auto;
-  justify-content: center;
+  justify-content: left;
   border-top: 1px #f7f7f7 solid;
   border-left: 1px #f7f7f7 solid;
     font-size: 15px;

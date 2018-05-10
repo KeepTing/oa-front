@@ -219,9 +219,12 @@ Page({
   onLoad: function (e) {
     var that = this;
     wx.setNavigationBarTitle({
-      title: "请假"
+      title: "请假申请"
     });
-
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#515e66',
+    });
     //获取当前用户的上级
     wx.request({
       url: host + '/user/getSuper',

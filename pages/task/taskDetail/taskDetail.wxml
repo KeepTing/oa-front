@@ -89,6 +89,6 @@
 
 <!--底部导航-->
 
-<view class='nav' bindtap='tomodel'>
-<view class='iconlist2'></view>
+<view class='nav' bindtap='tomodel' hidden='{{completeTab==0}}'>
+<view class='iconlist2' ></view>
 </view>

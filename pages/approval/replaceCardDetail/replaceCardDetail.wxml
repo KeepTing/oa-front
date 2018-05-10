@@ -27,7 +27,7 @@
 <view class='info'>
     <view>
       <text>补卡类型</text>
-      <text>{{type}}</text>
+      <text>{{array[type]}}</text>
     </view>
     <view>
       <text>补卡日期</text>
@@ -48,7 +48,7 @@
   <view class='box-sp'>
     <image src='{{src}}'></image>
     <text>{{toname}}</text>
-    <text>{{status}}</text>
+    <text>{{array1[status]}}</text>
   </view>
 </view>
  <view class='spilt'></view>

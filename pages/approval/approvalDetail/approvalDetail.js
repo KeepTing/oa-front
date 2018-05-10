@@ -5,6 +5,7 @@ var header = getApp().globalData.header; //获取app.js中的请求头
 Page({
   data: {
     array: ['事假', '病假', '婚假', '产假', '丧假', '其他'],
+    array1:['审批中','已同意','驳回'],
     o_id:'',
     fromname:'',
     type:0,
@@ -117,31 +118,42 @@ noClickto:function(){
 //删除
 _delete:function(){
   var that=this;
-  //删除审批
-  wx.request({
-    url: host + '/offwork/delete/'+that.data.o_id,
-    header: header,
-    method: 'DELETE',
-    dataType: 'text',
+  wx.showModal({
+    title: '提示',
+    content: '确定删除该审批？',
     success: function (res) {
-      var result=res.data;
-      console.log(result)
+      if (res.confirm) {
+        //删除审批
+        wx.request({
+          url: host + '/offwork/delete/' + that.data.o_id,
+          header: header,
+          method: 'DELETE',
+          dataType: 'text',
+          success: function (res) {
+            var result = res.data;
+            console.log(result)
 
-      if(result=="no_login"){
-        wx.redirectTo({
-          url: '/pages/login/login',
-        })
-      }
-      else if(result=="true"){
-        wx.showToast({
-          title: '删除成功',
-        })
-        wx.navigateBack({
-          delta:1
-        })
+            if (result == "no_login") {
+              wx.redirectTo({
+                url: '/pages/login/login',
+              })
+            }
+            else if (result == "true") {
+              wx.showToast({
+                title: '删除成功',
+              })
+              wx.navigateBack({
+                delta: 1
+              })
+            }
+          }
+        });
+      } else if (res.cancel) {
+        console.log('用户点击取消');
       }
     }
-  });
+  })
+  
 },
 
   onLoad: function (e) {

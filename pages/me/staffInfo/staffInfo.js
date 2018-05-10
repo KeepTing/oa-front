@@ -16,7 +16,10 @@ Page({
     name:'',
     post:'',
     dept:'',
-    headImg:''
+    headImg:'',
+    eid:'111',
+    address:''
+
   },
   navbarTap: function (e) {
     this.setData({
@@ -30,7 +33,7 @@ Page({
   },
   addDirectory:function(e){
     wx.addPhoneContact({
-      firstName: '王呵呵',   //名字
+      firstName:this.data.name,   //名字
       mobilePhoneNumber: '123',    //手机号
       success: function () {
         console.log('添加成功')
@@ -75,6 +78,7 @@ Page({
           dept: user.d_name,
           post: user.job,
           headImg: qiniuHost + user.headImg,
+          address:user.address
         });
       }
     }

@@ -28,11 +28,9 @@
     <text class="c-gray iconuser-add"></text>
     <text class='title'>审批人</text>
     <text class='topeople'> {{topeople}}</text>
-    <input class='hidden' type='text' name="as_toid" value='{{toid}}' hidden='hidden'></input>
-  
   </view> 
-
-
+  <input name="as_toid" value='{{toid}}' hidden='hidden'></input>
+  
   <view class='spilt'></view>
   <view class='blockw'>补卡理由</view>
   <view class='box'>

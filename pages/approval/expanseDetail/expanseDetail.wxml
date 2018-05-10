@@ -27,7 +27,7 @@
 <view class='info'>
     <view>
       <text>报销类型</text>
-      <text>{{type}}</text>
+      <text>{{array[type]}}</text>
     </view>
     <view>
       <text>发生日期</text>
@@ -52,7 +52,7 @@
   <view class='box-sp'>
     <image src='{{src}}'></image>
     <text>{{toname}}</text>
-    <text>{{status}}</text>
+    <text>{{array1[status]}}</text>
   </view>
 </view>
 

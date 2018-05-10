@@ -1,0 +1,17 @@
+<!--pages/me/alterTX/alterTX.wxml-->
+     <!--选择图片，预览图片-->
+ <view class='main'>
+  <view class="title">修改头像</view>
+    <form class='form' bindsubmit="formSubmit">
+    <view class="weui-uploader__bd">
+    <view class='input-box'bindtap="chooseImage">
+     <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" ></image>
+    </view>
+                 
+     </view>
+    <button  class='btn' formType="submit" style='width:80%;'>保存</button>
+    </form>
+
+ </view>                                                          
+
+               

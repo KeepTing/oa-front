@@ -39,7 +39,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    host:"http://192.168.0.145:8080",  //服务器host
+    host:"http://192.168.1.113:8080",  //服务器host
     qiniuHost:"http://p81iiyqk5.bkt.clouddn.com/",  //七牛云host
     header: {
        'Cookie': '',

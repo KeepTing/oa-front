@@ -26,7 +26,7 @@ page{
     color: #808080;
 }
 .title{
- width: 36%;
+ width: 40%;
 }
 .input{
   width: 50%;
@@ -42,6 +42,14 @@ page{
 }
 .weeks,.months{
   font-size: 34rpx;
+  display: inline-block;
+  margin-right:0px; 
+  position: relative;
+  width: 50%;
+}
+.picker{
+  position: relative;
+  right: -60%;
 }
 textarea{
   font-size: 34rpx;

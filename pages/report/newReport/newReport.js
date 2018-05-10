@@ -13,13 +13,13 @@ Page({
 
   },
   toaddweek:function(e){
-    wx.navigateTo({
-      url: '/pages/report/addReport/addReport?title=周报',
+    wx.redirectTo({
+      url: '/pages/report/addReport/addReport',
     })
   },
   toaddMonth: function (e) {
-    wx.navigateTo({
-      url: '/pages/report/addReport/addReport?title=月报',
+    wx.redirectTo({
+      url: '/pages/report/addMonth/addMonth',
     })
   },
   onLoad: function (options) {

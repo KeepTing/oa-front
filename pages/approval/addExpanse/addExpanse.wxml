@@ -32,9 +32,10 @@
     <text class="c-gray iconuser-check"></text>
     <text class='title'>审批人</text>
     <text class='topeople'> {{topeople}}</text>
-    <input class='hidden' name="re_toid"  type='text' hidden='hidden' value='{{toid}}'></input>
+
   
   </view> 
+<input name="re_toid"  hidden='hidden' value='{{toid}}'></input>
 
 
   <view class='spilt'></view>

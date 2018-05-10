@@ -22,6 +22,16 @@ Page({
       url: '/pages/report/newReport/newReport'
     })
   },
+  toattence: function (e) {
+    wx: wx.navigateTo({
+      url: '/pages/attendance/attendPage/attendPage'
+    })
+  },
+  toapproval: function (e) {
+    wx: wx.navigateTo({
+      url: '/pages/approval/approvalItem/approvalItem'
+    })
+  },
   onLoad: function (e) {
     //console.log("index获取到的用户名："+e.userName);
     wx.setNavigationBarTitle({

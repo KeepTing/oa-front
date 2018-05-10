@@ -1,0 +1,17 @@
+<!--pages/me/alterPwd/alterPwd.wxml-->
+<view class='main'>
+<text class='title'>修改密码</text>
+<view class='form'>
+<form bindsubmit="formSubmit" bindreset="formReset">
+<label>旧密码</label>
+<input type='text' name="oldpwd" value='{{oldpwd}}' password="true"></input>
+<label>新密码</label>
+<input type='text' name="newpwd" value='{{newpwd}}' password="true"></input>
+<label>确认密码</label>
+<input type='text' name="againnewpwd" value='{{againnewpwd}}' password="true"></input>
+<button  class='btn' formType="submit">保存</button>
+</form>
+</view>
+
+
+</view>

@@ -15,9 +15,11 @@ page{
   justify-content: center;
   height: 100%;
   border-radius: 50%;
+  padding-top: 5px;
 }
 .img image{
-  width: 80%;
+  width:50px;
+  height: 50px;
   border-radius: 50%;
 }
 .info{
@@ -35,6 +37,7 @@ page{
 .info .post{
   font-size: 14px;
   color: #b1b1b1;
+  padding: 0px 10px;
 }
 .addDirectory{
   width:13%;

@@ -1,2 +1,136 @@
 <!--pages/me/meInfo/meInfo.wxml-->
-<text>pages/me/meInfo/meInfo.wxml</text>
+<form bindsubmit="formSubmit">
+<view class='main'>
+ <text class='title'>基本信息</text>
+ <button class='btn' style='width:20%;display:inline-block;float:right;margin-right:10px;margin-top:5px;' formType="submit">确定</button>
+<view class='info'>
+ 
+<view class='box'>
+  <view>姓名</view>
+  <view>
+  <input type="text" name="username" value="{{username}}" /> 
+  </view>
+</view>
+
+<view class='box'>
+  <view>性别</view>
+  <view>
+    <picker bindchange="bindPickerChange" name="sex" value="{{index}}" range="{{array}}">
+        <view class="picker" >
+          {{array[index]}}
+        </view>
+    </picker>
+  </view>
+</view>
+
+<view class='box'>
+  <view>手机号</view>
+  <view>
+    <input type="text" name="phone" value="{{phone}}" /> 
+  </view>
+</view>
+
+<input type="text" name="account" value="{{account}}" hidden='hidden' />
+<input type="text" name="password" value="{{password}}" hidden='hidden'/>
+
+<view class='box'>
+  <view>身份证号</view>
+  <view>
+    <input type="idcard" name="idcard"  value="{{idcard}}"/> 
+  </view>
+</view>
+
+<view class='box'>
+  <view>邮箱</view>
+  <view>
+    <input type="text" name="email" value="{{email}}"/> 
+  </view>
+</view>
+
+<view class='box'>
+<view>qq</view>
+<view><input type="text" value="{{qq}}" name="qq" /> </view>
+</view>
+
+<view class='box'>
+<view>出生日期</view>
+<view>
+<picker mode="date" value="{{birthday}}"  name="birthday" bindchange="bindDateChange">
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker>
+
+ </view>
+</view>
+
+<view class='box'>
+<view>婚姻状况</view>
+<view>
+<picker bindchange="marry" name="is_marry" value="{{index1}}" range="{{array1}}">
+    <view class="picker" >
+      {{array1[index1]}}
+    </view>
+  </picker> </view>
+</view>
+
+<view class='box'>
+<view>地址</view>
+<view><input type="text" name="addresss" value="{{address}}" /> </view>
+</view>
+
+<view class='box'>
+<view>入职日期</view>
+<view>
+<picker mode="date" value="{{entryDate}}"  name="entryDate" bindchange="bindDateChange1">
+    <view class="picker">
+      {{entryDate}}
+    </view>
+  </picker>
+  </view>
+</view>
+<view class='box'>
+<view>转正日期</view>
+<view>
+<picker mode="date" value="{{formalDate}}"  name="formalDate" bindchange="bindDateChange2">
+    <view class="picker">
+      {{formalDate}}
+    </view>
+  </picker>
+  </view>
+</view>
+ </view>
+
+<text class='title'>职位信息</text>
+<view class='info'>
+<view class='box'>
+<view>公司</view>
+<view>{{company}}</view>
+</view>
+<input name="c_id" value='{{c_id}}' hidden='hidden'></input>
+<input name="id" value='{{id}}' hidden='hidden'></input>
+<input name="image" value='{{image}}' hidden='hidden'></input>
+<view class='box'>
+<view>工号</view>
+<view>{{eid}}</view>
+</view>
+<input name="eid" value='{{eid}}' hidden='hidden'></input>
+<view class='box'>
+<view>职位</view>
+<view>{{job}}</view>
+</view>
+<input name="job" value='{{job}}' hidden='hidden'></input>
+<view class='box'>
+<view>部门</view>
+<view>{{dept}}</view>
+</view>
+<input name="d_id" value='{{d_id}}' hidden='hidden'></input>
+<view class='box'>
+<view>员工权限</view>
+<view>{{role[indexrole]}}</view>
+</view>
+<input name="role" value='{{indexrole}}' hidden='hidden'></input>
+
+</view>
+</view>
+</form>

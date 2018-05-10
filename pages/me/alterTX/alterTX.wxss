@@ -1,0 +1,53 @@
+/* pages/me/alterTX/alterTX.wxss */
+.main{
+  margin-top: 10px;
+  background-color: #fff;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0px;
+}
+.main .title{
+  width: 100%;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-family: "宋体";
+  font-weight: bold;
+  font-size: 20px;
+  padding:10px 0px;
+}
+.main .form{
+  width: 100%;
+  display: block;
+}
+.main .form .weui-uploader__input-box {
+float:left;
+position:relative;
+margin-right:0px;
+margin-bottom:0px;
+width:100px;
+height:100px;
+border:1px solid #D9D9D9;
+
+}
+.main .form .weui-uploader__img {
+display:block;
+width:150px;
+height:150px;
+margin-right:10px;
+border-radius:50%; 
+border:  1px solid #D9D9D9; 
+
+}
+
+
+.weui-uploader__bd{
+
+background-color: #fff;
+padding: 20px 0px;
+display: flex;
+flex-direction: row;
+justify-content: center;align-items: center;
+}
+

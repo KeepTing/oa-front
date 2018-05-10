@@ -29,7 +29,8 @@ Page({
     currentTab: 0,
     count: [1, 2, 3, 4, 5, 6, 7, 8, 9],
     imageList:[],
-    ilist:[]
+    ilist:[],
+    completeTab:1,
   },
   //删除录音
   deleteVoice: function () {
@@ -137,6 +138,9 @@ Page({
               wx.showToast({
                 title: '删除成功',
               })
+              wx.navigateBack({
+                url: '/pages/task/taskIndex/taskIndex',
+              })
                 wx.redirectTo({
                   url: '/pages/task/taskIndex/taskIndex',
                 })
@@ -160,6 +164,9 @@ Page({
           else if (res.data == "true") {
             wx.showToast({
               title: '删除成功',
+            })
+            wx.navigateBack({
+              url: '/pages/task/taskIndex/taskIndex',
             })
             wx.redirectTo({
               url: '/pages/task/taskIndex/taskIndex',
@@ -199,6 +206,19 @@ Page({
       dataType:'json',
       success: function (res) {
         console.log(res.data)
+
+        var users = res.data.t_toUserList;
+        var user=wx.getStorageSync("user");
+        wx.setStorageSync("toUserList", res.data.t_toUserList);
+        //如果
+        console.log(users);
+        for (var i = 0; i < users.length; i++) {
+            if(users[i].eid==user.eid && users[i].status==1){
+              that.setData({
+                completeTab:0
+              })
+            }
+        }
         var file = JSON.parse(res.data.t_file);
         var imgs=file.image;
         var voice=file.voice;
@@ -227,8 +247,9 @@ Page({
           imageList:imgss,
           voiceUrl:qiniuHost+voice
         });
-        console.log(JSON.stringify(res.data.t_toUserList));
-        wx.setStorageSync("toUserList", res.data.t_toUserList);
+       
+        // console.log(JSON.stringify();
+        
       }
     });
   }

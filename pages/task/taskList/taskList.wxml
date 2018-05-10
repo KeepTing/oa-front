@@ -13,7 +13,7 @@
         <view class='adbig-title'>{{item.t_title}}</view>
         <view class='adsmall-title c-red'>
           {{item.endTime}} 
-          <text>截至</text>
+          
         </view>
       </view>
     </navigator>

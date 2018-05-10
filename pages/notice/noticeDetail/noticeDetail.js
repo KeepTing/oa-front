@@ -17,13 +17,9 @@ var qiniuHost = getApp().globalData.qiniuHost;
 Page({
   data: {
     rInfo: [{
-      name: '王建东',
-      topic: '月报',
-      date: '3-9'
-    }, {
-      name: '胡建东',
-      topic: '月报',
-      date: '3-9'
+      name: '',
+      topic: '',
+      date: '9'
     }],
     title:'',
     fromPeople:'',

@@ -1,103 +1,35 @@
 <!--pages/report/reportDetail/reportDetail.wxml-->
+<view class='spilt'></view>
 <view class='main-body'>
 <view style='height:2px;'></view>
 <view class='box'>
   <view class='title'>
-    <text>日报</text>
-    <text>2018年3月20日 星期二</text>
+    <text>{{array[type]}}</text>
+    <text>{{date}}</text>
   </view>
   <view class='info'>
     <view>
       <text>发起人</text>
-      <text>王建东</text>
+      <text>{{frompeople}}</text>
     </view>
     <view>
       <text>汇报给</text>
-      <text>山东鼎新有限公司</text>
+      <text>{{topeople}}</text>
     </view>
-    <view class='time'>3月20日 9：20</view>
-  </view>
   
+  </view>
+<view>汇报内容</view>
+<view style='height:10px;'></view>
   <view class='content'>
-  1、完成XXXXXXXXXX
-  2、完成XXXXXXXXXX
+ {{content}}
   </view>
 </view>
 <view class='spilt'></view>
-<view class='comment'>
-  <view class='title'>
-  <text class='iconthumbs-o-up c-red'></text>
-  评论区
-  </view>
-  <view class='content'>
-    <view class='c-box'>
-      <view class='c-img'>
-      <image mode='widthFix' src='/pages/img/compropago.png'></image>
-    </view>
-    <view class='all-text'>
-      <view class='box1'>
-        <view class='c-name'>姓名</view>
-        <view class='c-content'> 
-        汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容汇报内容
-        </view>
-        <view class='c-upimg'>
-          <image mode='widthFix' src='/pages/img/jt.jpg'></image>
-        </view>
-        <view class='c-file'>文件.txt</view>
-      </view>
-      <view class='box2'>     
-        <view class='c-time'>10:20</view>
-        <view class='c-icon'>
-          <text class='iconchat-bubble-dots c-blue'></text>
-        </view>
-      </view>
-    </view>
-    </view>
 
 
-     <view class='c-box'>
-      <view class='c-img'>
-      <image mode='widthFix' src='/pages/img/compropago.png'></image>
-    </view>
-    <view class='all-text'>
-      <view class='box1'>
-        <view class='c-name'>姓名</view>
-        <view class='c-content'> 
-        汇报内容汇报内容汇报内容汇报内容汇报
-        </view>
-      </view>
-      <view class='box2'>     
-        <view class='c-time'>10:20</view>
-        <view class='c-icon'>
-          <text class='iconprofile'></text>
-        </view>
-      </view>
-    </view>
-    </view>
-
-      <view class='c-box'>
-      <view class='c-img'>
-      <image mode='widthFix' src='/pages/img/compropago.png'></image>
-    </view>
-    <view class='all-text'>
-      <view class='box1'>
-        <view class='c-name'>姓名</view>
-        <view class='c-content'> 
-        汇报内容汇报内容汇报内容汇报内容汇报
-        </view>
-      </view>
-      <view class='box2'>     
-        <view class='c-time'>10:20</view>
-        <view class='c-icon'>
-          <text class='iconcommenting-o'></text>
-        </view>
-      </view>
-    </view>
-    </view>
-  </view>
 </view>
 <!--底部导航-->
-<view class='bottom-nav'>
-  <text class='into'>输入回复内容....</text>
-</view>
+
+<view class='nav' bindtap='tomodel'>
+<view class='iconlist'></view>
 </view>

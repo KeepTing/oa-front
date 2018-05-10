@@ -8,7 +8,7 @@
 <view  class="title">登录微办公</view>
 -->
 <view class='head'>
-  <view class='bigtitle'>微办公</view>
+  <view class='bigtitle'>企办办</view>
   <view class='smalltitle'>智能一体化移动办公平台</view>
 </view>
 <!--main-->
@@ -25,11 +25,9 @@
 				  <button formType="submit" class="btn disabled" id='loginBtn'>登录</button>
 			  </view>
       </form>
-      <view class="orl">
-				<a  class="link">忘记密码？</a>
-			</view> 
+     
       <view class="fot">
-            www.weibangong.com
+            www.qibanban.com
       </view>
     </view>
 </view>

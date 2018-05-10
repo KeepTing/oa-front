@@ -1,3 +1,4 @@
+<!--pages/report/addMonth/addMonth.wxml-->
 <!--pages/report/addReport/addReport.wxml-->
 <view class='main' >
 <form  bindsubmit="formSubmit" bindreset="formReset">   
@@ -5,11 +6,12 @@
   <view class='box'>
     <text class="c-gray iconclock"></text>
     <text class='title' >日期</text>
-  <picker name='timeRange' class='weeks' bindchange="bindWeekChange" value=" {{index}}" range="{{array}}">
-    <view class="picker">
-    {{array[index]}}
-    </view>
-  </picker>
+   <picker name='timeRange' class='months'style='display:{{monthflag}}' mode="date" fields="month" value="{{months}}" bindchange="bindMonthChange">  
+    <view class="picker">  
+    {{months}}
+    </view>  
+  </picker>    
+    
   </view>
   <view class='box'>
     <text class="c-gray iconuser"></text>
@@ -19,7 +21,7 @@
    {{topeople}}
    </view>
       <input name='r_toid' hidden='hidden' value='{{toid}}' style='width:2%;'/>
-      <input name='type' hidden='hidden' value='0' style='width:2%;'/>
+      <input name='type' hidden='hidden' value='1' style='width:2%;'/>
   </view>
   <view class='spilt'></view>
    <view class='box'>
@@ -33,6 +35,7 @@
    <view class='spilt'></view>   
 </form>
 </view>
+
 
 
 

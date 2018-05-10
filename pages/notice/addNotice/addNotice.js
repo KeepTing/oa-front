@@ -217,6 +217,9 @@ Page({
       header: header,
       success: function (res) {
         if (JSON.stringify(res.data) == 'true') {
+          wx.navigateBack({
+            url: '/pages/notice/noticeItems/noticeItems'
+          })
           wx.redirectTo({
             url: '/pages/notice/noticeItems/noticeItems'
           })
