@@ -195,23 +195,23 @@ const conf = {
               url: 'pages/login/login',
             })
           }
-          if (attence.upstatus != null && attence.upstatus != "") {
-            up = attence.upstatus;
-          }
-          if (attence.startTime != null && attence.startTime != "") {
-            startTime = attence.startTime;
-          }
-          if (attence.downstatus != null && attence.downstatus != "") {
-            down = attence.downstatus;
-          }
-          if (attence.endTime != null && attence.endTime != '') {
-            endTime = attence.endTime;
-          }
+          // if (attence.upstatus != null && attence.upstatus != "") {
+          //   up = attence.upstatus;
+          // }
+          // if (attence.startTime != null && attence.startTime != "") {
+          //   startTime = attence.startTime;
+          // }
+          // if (attence.downstatus != null && attence.downstatus != "") {
+          //   down = attence.downstatus;
+          // }
+          // if (attence.endTime != null && attence.endTime != '') {
+          //   endTime = attence.endTime;
+          // }
           that.setData({
-            upstatus: up,
-            uptime: startTime,
-            downstatus: down,
-            downtime: endTime,
+            upstatus: attence.upstatus,
+            uptime: attence.startTime,
+            downstatus: attence.downstatus,
+            downtime: attence.endTime,
           });  
         }
         else {

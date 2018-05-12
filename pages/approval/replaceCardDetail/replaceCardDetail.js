@@ -127,7 +127,7 @@ Page({
           wx.request({
             url: host + '/attencesign/delete/' + that.data.as_id,
             header: header,
-            method: 'DELETE',
+            method: 'PUT',
             dataType: 'text',
             success: function (res) {
               var result = res.data;
@@ -141,10 +141,13 @@ Page({
               else if (result == "true") {
                 wx.showToast({
                   title: '删除成功',
+                  success:function(res){
+                    wx.navigateBack({
+                      delta: 1
+                    })
+                  }
                 })
-                wx.navigateBack({
-                  delta: 1
-                })
+               
               }
             }
           });

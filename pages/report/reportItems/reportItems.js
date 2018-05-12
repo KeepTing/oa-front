@@ -22,7 +22,7 @@ Page({
   tomodel: function () {
     var that = this;
     wx.showActionSheet({
-      itemList: ['全部', '我发出的', '我接收的'],
+      itemList: ['我发出的', '我接收的'],
       itemColor: "#CED63A",
       success: function (res) {
         if (!res.cancel) {
@@ -55,6 +55,34 @@ Page({
       url: "/pages/report/reportDetail/reportDetail?id=" + e.currentTarget.dataset.id
     }) 
   },
+  onShow:function(){
+    var that = this;
+    wx.setNavigationBarTitle({
+      title: '汇报列表',
+    })
+
+    //获取汇报列表
+    wx.request({
+      url: host + '/report/all/0',
+      header: header,
+      method: 'GET',
+      dataType: 'json',
+      success: function (res) {
+        console.log(res.data)
+        if (res.data + "" == "no_login") {
+          wx.redirectTo({
+            url: '/pages/login/login',
+          })
+        } else {
+          that.setData({
+            Info: res.data
+          })
+          wx.setStorageSync("reportList", res.data);
+        }
+
+      }
+    });
+  },
   onLoad: function (e) {
     var that=this;
     console.log(e);
@@ -83,5 +111,20 @@ Page({
        
       }
     });
+  },
+  onPullDownRefresh: function () {
+    //wx.startPullDownRefresh();
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+
+    //模拟加载
+    setTimeout(function () {
+      console.log(getCurrentPages().pop().route);
+      wx.redirectTo({
+        url: "/" + getCurrentPages().pop().route,
+      })
+      // complete
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    }, 1500);
   }
 })

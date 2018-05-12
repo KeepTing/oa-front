@@ -124,7 +124,7 @@ Page({
           wx.request({
             url: host + '/overtime/delete/' + that.data.ot_id,
             header: header,
-            method: 'DELETE',
+            method: 'PUT',
             dataType: 'text',
             success: function (res) {
               var result = res.data;

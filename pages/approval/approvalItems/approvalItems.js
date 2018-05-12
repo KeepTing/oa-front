@@ -7,22 +7,22 @@ Page({
     navbar: ['我提交的', '我审批的'],
     currentTab: 0,
     current:0,
-    Info: [{
-      approval_id:'',
-      headImg:'',
-      fromUser: "",
-      type:'',
-      createTime:'',
-      status:'3'
-    }],
-    Info1: [{
-      approval_id:'',
-      headImg: '',
-      fromUser: "",
-      type: '',
-      createTime: '',
-      status: '3'
-    }]
+    // Info: [{
+    //   approval_id:'',
+    //   headImg:'',
+    //   fromUser: "",
+    //   type:'',
+    //   createTime:'',
+    //   status:'3'
+    // }],
+    // Info1: [{
+    //   approval_id:'',
+    //   headImg: '',
+    //   fromUser: "",
+    //   type: '',
+    //   createTime: '',
+    //   status: '3'
+    // }]
 
   },
   navbarTap: function (e) {
@@ -60,12 +60,12 @@ Page({
 
           console.log(res.data)
           var approvals = res.data;
-          if (approvals != null && approvals != "") {
+         // if (approvals != null && approvals != "") {
             that.setData({
               Info: approvals,
               current: 1
             })
-          }
+          //}
         }
       });
     }
@@ -115,17 +115,46 @@ Page({
 
         console.log(res.data)
         var approvals = res.data;
-        if (approvals != null && approvals != "") {
+       // if (approvals != null && approvals != "") {
           that.setData({
             Info1: approvals,
             current:1
+          })
+       // }
+      }
+    });
+  },
+onShow:function(){
+    
+    var that = this
+    wx.setNavigationBarTitle({
+      title: '审批列表'
+    })
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#515e66',
+    })
+
+    //获取审批列表
+    wx.request({
+      url: host + '/approval/list?type=0',
+      header: header,
+      method: 'GET',
+      dataType: 'json',
+      success: function (res) {
+
+        console.log(res.data)
+        var approvals = res.data;
+        if (approvals != null && approvals != "") {
+          that.setData({
+            Info: approvals
           })
         }
       }
     });
   },
   onLoad: function (e) {
-    console.log(e);
+   // console.log(e);
     var that = this
     wx.setNavigationBarTitle({
       title: '审批列表'
@@ -152,5 +181,21 @@ Page({
         }
       }
     });
+  },
+
+  onPullDownRefresh: function () {
+    //wx.startPullDownRefresh();
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+
+    //模拟加载
+    setTimeout(function () {
+      console.log(getCurrentPages().pop().route);
+      wx.redirectTo({
+        url: "/" + getCurrentPages().pop().route,
+      })
+      // complete
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    }, 1500);
   }
 })

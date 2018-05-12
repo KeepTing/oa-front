@@ -56,6 +56,11 @@ Page({
               wx.setStorageSync("user", res.data.user);
               wx.showToast({
                 title: '修改成功',
+                success:function(res){
+                  wx.redirectTo({
+                    url: '/pages/login/login',
+                  })
+                }
               })
 
               wx.navigateBack({

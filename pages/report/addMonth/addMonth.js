@@ -49,6 +49,8 @@ Page({
   formSubmit: function (e) {
     var that = this;
     e.detail.value.topeople = that.data.topeople;
+    e.detail.value.r_toid = that.data.toid;
+    e.detail.value.type = 1;
     var formData = e.detail.value; //获取表单所有input的值
     console.log(formData);
     //提交汇报
@@ -67,12 +69,11 @@ Page({
             })
           }
           else if (result == "true") {
-            wx.redirectTo({
-              url: '/pages/report/reportItems/reportItems',
+            wx.navigateBack({
+              delta: 2
             })
           }
         }
-
       }
     });
   },

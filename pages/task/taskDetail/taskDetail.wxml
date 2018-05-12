@@ -5,26 +5,26 @@
   <view class='box'>
     <text class="c-gray iconcheckbox-checked"></text>
     <text class='title'>任务名称</text>
-     <input name='taskTitle' value="{{title}}"/>
+     <input name='taskTitle' value="{{title}}" disabled='disabled'/>
   </view>
   <view class='spilt'></view>
   <view class='box'>
     <text class="c-gray iconuser-tie"></text>
     <text class='title'>发送人</text>
-     <input name='taskName' value="{{fromPeople}}" />
+     <input name='taskName' value="{{fromPeople}}" disabled='disabled'/>
     
   </view>
   <view class='box'>
     <text class="c-gray iconuser-add"></text>
     <text class='title'>负责人</text>
-     <input name='taskName' value="{{toPeople}}" />
+     <input name='taskName' value="{{toPeople}}" disabled='disabled'/>
      <view bindtap='clickto'> <text class='btnstaff iconplex'></text></view>
   </view> 
   <view class='spilt'></view>
   <view class='box'>
     <text class="c-gray iconbookmarks"></text>
     <text class='title'>优先级</text>
-    <picker name='mark' class='date'  bindchange="bindPickerChange" value="{{index}}" range="{{array}}" value=''>
+    <picker name='mark' class='date'  bindchange="bindPickerChange" value="{{index}}" range="{{array}}" value='' disabled='disabled'>
     <view class="picker">
       {{array[index]}}
     </view>
@@ -33,7 +33,7 @@
    <view class='box'>
     <text class="c-gray iconalarm"></text>
     <text class='title'>截至时间</text>
-    <picker name='taskDate' mode="date" class='date' value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <picker name='taskDate' mode="date" class='date' value="{{date}}" disabled='disabled' bindchange="bindDateChange">
     <view class="picker">
       {{date}}
     </view>
@@ -42,7 +42,7 @@
   <view class='spilt'></view>
   <view class='box'>
   
-    <textarea name='taskContent' placeholder="任务描述"  value="{{content}}" />
+    <textarea name='taskContent' placeholder="任务描述"  value="{{content}}" disabled='disabled' />
   </view>
        <!--选择图片，预览图片-->
         <view class="weui-cells">
@@ -61,9 +61,10 @@
                       </view>
                     </block>
                   </view>
-                     <view class="weui-uploader__input-box">
+                  
+                     <!-- <view class="weui-uploader__input-box">
                     <view class="weui-uploader__input" bindtap="chooseImage1"></view>
-                  </view>
+                  </view> -->
                  
                 </view>
               </view>
@@ -78,17 +79,17 @@
   {{voiceUrl}}
   </view>
   <image src='/image/pause.png' bindtap="play"> </image>
-  <image  src='/image/trash.png'  bindtap="deleteVoice"></image>
+  <!-- <image  src='/image/trash.png'  bindtap="deleteVoice"></image> -->
   </view>
 </view>
    <view class='spilt'></view>
-   <button class='btn btn-size' formType="submit">保存</button> 
+   <!-- <button class='btn btn-size' formType="submit">保存</button>  -->
    <view class='spilt'></view>   
 </form>
 </view>
 
 <!--底部导航-->
 
-<view class='nav' bindtap='tomodel' hidden='{{completeTab==0}}'>
+<view class='nav' bindtap='tomodel' hidden='{{completeTab==1}}'>
 <view class='iconlist2' ></view>
 </view>

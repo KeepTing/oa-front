@@ -1,0 +1,36 @@
+/* pages/attendance/daySum/daySum.wxss */
+.main{
+  width: 100%;
+}
+.section{
+  width: 50%;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius:5%; 
+  margin:10px auto;
+  border: 1px solid #eee;
+}
+
+.box{
+  width: 100%;
+  background-color: #fff;
+  border-bottom:1px solid #eee;
+  padding: 5px 0px;
+}
+.box view{
+  width: 25%;
+  display:inline-block;
+  text-align: center;
+}
+.color0{
+  color: red;
+}
+.color1{
+  color: green;
+}
+#box1s{
+  font-size: 12px;
+  color: #999999;
+}

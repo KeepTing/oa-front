@@ -1,0 +1,23 @@
+<!--pages/attendance/monSum/monSum.wxml-->
+<!--pages/attendance/daySum/daySum.wxml-->
+<view class='main'>
+<view class="section">
+  <picker mode="date" value="{{date}}" fields="month" bindchange="bindDateChange">
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker>
+</view>
+<view class='box' wx:for="{{attenceInfo}}">
+  <view class='name'>{{item.username}}</view>
+  <view class='content'>
+  <view>迟到：<text>{{item.lateDays}}</text>次</view>
+  <view>早退：<text>{{item.earlyDays}}</text>次</view>
+  </view>
+  <view class='content'>
+   <view>正常：<text>{{item.attenceAllDays}}</text>次</view>
+   <view>缺勤：<text>{{item.absenceDays}}</text>次</view>
+  </view>
+</view>
+</view>
+

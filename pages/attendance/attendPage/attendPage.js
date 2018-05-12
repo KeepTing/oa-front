@@ -15,22 +15,32 @@ Page({
     timesuccess: '',//打卡成功时间
     status: '',//打卡成功情况
     current:0,
-    num: 0
+    num: 0,
+    operateList:[]
   },
   tomodel:function(){
     var that = this;
     wx.showActionSheet({
-      itemList: ['打卡记录', '月汇总'],
+      itemList: that.data.operateList,
       itemColor: "#CED63A",
       success: function (res) {
         if (!res.cancel) {
-          if (res.tapIndex == 0) {
+          var typeOp = that.data.operateList[res.tapIndex];
+          if (typeOp== "打卡记录") {
             wx.navigateTo({
               url: '/pages/attendance/attendRecord/attendRecord',
             })
-          } else if (res.tapIndex == 1) {
+          } else if (typeOp == "月汇总") {
             wx.navigateTo({
               url: '/pages/attendance/monthRecord/monthRecord',
+            })
+          } else if (typeOp == "员工考勤日汇总") {
+            wx.navigateTo({
+              url: '/pages/attendance/daySum/daySum',
+            })
+          } else if (typeOp == "员工考勤月汇总") {
+            wx.navigateTo({
+              url: '/pages/attendance/monSum/monSum',
             })
           }
         }
@@ -113,6 +123,17 @@ Page({
   onLoad: function (e) {
 
     var that=this;
+
+    var user=wx.getStorageSync("user");
+    if(user.role<2){
+      that.setData({
+        operateList: ['打卡记录', '月汇总', '员工考勤日汇总', '员工考勤月汇总']
+      })
+    }else{
+      that.setData({
+        operateList: ['打卡记录', '月汇总']
+      })
+    }
     //获取上下班打卡时间及操作（上班或下班）
     wx.request({
       url: host + '/attence/operate',

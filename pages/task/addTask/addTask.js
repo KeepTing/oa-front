@@ -70,15 +70,12 @@ Page({
   },
   //开始录音的时候
   startRecode: function () {
-    wx.showToast({
-      title: '录音中',
-      icon: "loading",
-    })
+   
     this.setData({
       vsrc: '/image/yyblue.png'
     });
     const options = {
-      duration: 10000,//指定录音的时长，单位 ms
+      // duration: 10000,//指定录音的时长，单位 ms
       sampleRate: 16000,//采样率
       numberOfChannels: 1,//录音通道数
       encodeBitRate: 96000,//编码码率
@@ -87,8 +84,13 @@ Page({
     }
     //开始录音
     recorderManager.start(options);
+   
     recorderManager.onStart(() => {
-      console.log('recorder start')
+      console.log('recorder start');
+      wx.showToast({
+        title: '录音中',
+        icon: "loading",
+      })
     });
     //错误回调
     recorderManager.onError((res) => {
@@ -234,7 +236,24 @@ Page({
   //添加任务
   formSubmit: function (e) {
     var that = this;
-
+    e.detail.value.t_toid=wx.getStorageSync('finalUserIdList')+"";
+    if (e.detail.value.t_title == "") {
+      wx.showToast({
+        icon: "none",
+        title: '请输入标题',
+      })
+    } else if (e.detail.value.t_toid == "") {
+      wx.showToast({
+        icon: "none",
+        title: '请选择发送人',
+      })
+    }
+    else if (e.detail.value.t_desc == "") {
+      wx.showToast({
+        icon: "none",
+        title: '请填写内容',
+      })
+    } else {
       var formData = e.detail.value; //获取表单所有input的值
       formData = e.detail.value;
       console.log("dsfsdfdsf" + JSON.stringify(formData));
@@ -246,22 +265,25 @@ Page({
         method: 'POST',
         header: header,
         success: function (res) {
-          
-          if(JSON.stringify(res.data)=='true'){
+
+          if (JSON.stringify(res.data) == 'true') {
 
             //此处跳转问题
-            // wx.navigateBack({
-            //   url: '/pages/task/taskIndex/taskIndex'
+            wx.navigateBack({
+             delta:1
+            })
+            // wx.redirectTo({
+            //   url: "/" + getCurrentPages().pop().route,
             // })
-            wx.redirectTo({
-              url: '/pages/task/taskIndex/taskIndex'
-            }) 
-          //console.log("水电费水电费");
+            //console.log("水电费水电费");
           }
           console.log(res.data)
         }
       })
-    
+
+
+    }
+     
  
   },
   //选择图片
@@ -297,7 +319,6 @@ Page({
   },
   onLoad: function (options) {
     var that=this;
-   
     //初始化选中的员工id数组
     // wx.setStorage({
     //   key: 'totalUserIdList',

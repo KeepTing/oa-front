@@ -1,37 +1,41 @@
 <!--index.wxml-->
 <view class='main-body'>
 <view class='spilt'></view>
-<!--通知区域-->
 <view class='advise'>
-  <view class='title'>通知提醒</view>
-  <view class='content'>
-    <navigator class='box' url="/pages/advise/advise?title=公告通知">
-    <span class="c-yellow iconprofile"></span>
+  <view class='title' bindtap='noticeList'>
+    公告通知<span class="pot iconcheveron-right"></span>
+  </view>
+  <view class='content' wx:for='{{noticeInfo}}'>
+    <navigator class='box' url="/pages/notice/noticeDetail/noticeDetail?noticeid={{item.id}}">
+     <span class="head">
+     <image src='{{item.headImg}}'></image>
+     </span>
+ 
     <view class='all-text'>
-      <view class='adbig-title'>
-        公告通知
-      </view>
-      <view class='adsmall-title'>公告通知</view>
+      <view class='adbig-title'>{{item.fromUser}}</view>
+      <view class='adbig-title'>{{item.title}}</view>
+      <view class='adsmall-title'>{{item.pubTime}}</view>
     </view>
-    <span class="pot">3-9</span>
   </navigator>
-  <navigator class='box' url="/pages/advise/advise?title=汇报通知">
-    <span class="c-blue iconprinter"></span>
+  </view>
+</view>
+<view class='spilt'></view>
+<view class='advise'>
+  <view class='title' bindtap='approalList'>
+    审批通知<span class="pot iconcheveron-right"></span>
+  </view>
+  <view class='content' wx:for='{{approvalInfo}}' hidden="{{current==1}}">
+    <view class='box' bindtap='navtoDetail' data-id="{{item.approval_id}}" data-typeapproval="{{item.type}}">
+     <span class="head">
+     <image src='{{item.headImg}}'></image>
+     </span>
+ 
     <view class='all-text'>
-      <view class='adbig-title'>汇报通知</view>
-      <view class='adsmall-title'>汇报通知</view>
+      <view class='adbig-title'>{{item.fromUser}}</view>
+      <view class='adbig-title'>{{item.type}}</view>
+      <view class='adsmall-title'>{{item.createTime}}</view>
     </view>
-    <span class="pot">3-19</span>
-  </navigator>
-  <navigator class='box' url="/pages/advise/advise?title=审批通知">
-    <span class="c-orangle iconpen"></span>
-     <view class='all-text'>
-      <view class='adbig-title'>审批通知</view>
-      <view class='adsmall-title'>审批通知</view>
-    </view>
-    <span class="pot">3-9</span>
-  </navigator>
-
+  </view>
   </view>
 </view>
 
@@ -39,21 +43,15 @@
 <view class='spilt'></view>
 <!--任务区域-->
 <view class='task'>
-  <navigator class='box box-click' url="/pages/task/task?title=任务">
+  <navigator class='box box-click' url="/pages/task/taskIndex/taskIndex">
     <text>任务</text>
-    <span class="pot">></span>
+    <span class="pot iconcheveron-right"></span>
   </navigator>
   <view class='content'>
-    <navigator class='box' url="/pages/taskItems/taskItems?title=">
+    <navigator wx:for="{{taskInfo}}" class='box' url="/pages/task/taskDetail/taskDetail?taskid={{item.t_id}}">
       <view class='all-text'>
-        <view class='adbig-title'>公告通知</view>
-        <view class='adsmall-title c-red'>公告通知</view>
-      </view>
-    </navigator>
-    <navigator class='box' url="/pages/taskItems/taskItems?title=">
-      <view class='all-text'>
-        <view class='adbig-title'>公告通知</view>
-        <view class='adsmall-title c-red'>公告通知</view>
+        <view class='adbig-title'>{{item.t_title}}</view>
+        <view class='adsmall-title c-red'>{{item.endTime}}截止</view>
       </view>
     </navigator>
   </view>

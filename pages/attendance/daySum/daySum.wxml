@@ -1,0 +1,25 @@
+<!--pages/attendance/daySum/daySum.wxml-->
+<view class='main'>
+<view class="section">
+  <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker>
+</view>
+<view class='box' id='box1s'>
+  <view>姓名</view>
+  <view>上班打卡</view>
+  <view>下班打卡</view>
+  <view>状态</view>
+</view>
+<view class='box' wx:for="{{attenceInfo}}">
+  <view>{{item.username}}</view>
+  <view>{{item.startTime}}</view>
+  <view>{{item.endTime}}</view>
+  <view class='color{{item.status}}'>{{a_status[item.status]}}</view>
+</view>
+
+
+
+</view>

@@ -15,6 +15,9 @@
    
     "pages/attendance/attendRecord/attendRecord",
     "pages/attendance/monthRecord/monthRecord",
+    "pages/attendance/monSum/monSum",
+    "pages/attendance/daySum/daySum",
+    
     "pages/notice/chooseUser/chooseUser",
 
     "pages/task/taskDetail/taskDetail",
@@ -48,7 +51,7 @@
     "pages/report/reportDetail/reportDetail",
     "pages/addTask/addTask",
     "pages/logs/logs",
-    "pages/taskItems/taskItems",
+
     "pages/notice/noticeItems/noticeItems",
     "pages/report/reportItems/reportItems",
     "pages/approval/addApproval/addApproval",
@@ -66,10 +69,12 @@
     "pages/address/staffList/staffList"
   ],
   "window": {
-    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "企办办",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#f2f2f2",
+    "backgroundTextStyle": "dark"
   },
   "tabBar": {
     "color": "#000000",

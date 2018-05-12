@@ -2,7 +2,7 @@
 
 <view class='boxcheck' wx:for="{{items}}" >
 
-  <label  class="checkbox">
+  <label  class="checkbox" bindtap='clicktostaff'>
       <text class='tx'>{{item.d_name}}</text>
       <text class='name'>{{item.d_name}}</text>
   </label>

@@ -31,7 +31,7 @@ Page({
                   wx.request({
                     url: host + '/report/delete/' + that.data.r_id,
                     header: header,
-                    method: 'DELETE',
+                    method: 'PUT',
                     dataType: 'json',
                     success: function (res) {
                       console.log(res.data)
@@ -43,18 +43,12 @@ Page({
                         wx.showToast({
                           title: '删除成功',
                         })
+
+                        wx.navigateBack({
+                          delta: 1
+                        })
                       }
-                      wx.navigateBack({
-                        url:'/pages/report/reportItems/reportItems',
-                        success: function () {
-                          wx.redirectTo({
-                            url: '/pages/report/reportItems/reportItems',
-                          })
-                          // getCurrentPages().splice(1, 1);
-                          // getCurrentPages().splice(2, 1);
-                          // console.log(getCurrentPages())
-                        }
-                      })
+                     
                      
                    
                       // getCurrentPages().splice(getCurrentPages().length - 1, 1);

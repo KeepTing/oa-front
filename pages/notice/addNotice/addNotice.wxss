@@ -47,7 +47,6 @@ page{
 textarea{
   font-size: 34rpx;
   margin-left: 10px;
-  height: 100px;
 }
 .btn-size{
   width: 80%;

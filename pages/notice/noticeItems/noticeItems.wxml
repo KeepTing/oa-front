@@ -9,7 +9,7 @@
     <view class='all-text'>
       <view>
         <text class='name'>{{item.fromUser}}</text>
-        <text class='time'>{{item.createTime}}</text>
+        <text class='time'>{{item.pubTime}}</text>
       </view>
       <view>
         <view class='title'>{{item.title}}</view>      

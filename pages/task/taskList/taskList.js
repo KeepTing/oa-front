@@ -7,16 +7,16 @@ Page({
   data: {
     navbar: ['进行中', '已完成'],
     currentTab: 0,
-    taskInfo: [{
-      t_id:"",
-      t_title: "",
-      endTime: ''
-    }],
-    taskInfo1: [{
-      t_id: "",
-      t_title: "",
-      endTime: ''
-    }],
+    // taskInfo: [{
+    //   t_id:"",
+    //   t_title: "",
+    //   endTime: ''
+    // }],
+    // taskInfo1: [{
+    //   t_id: "",
+    //   t_title: "",
+    //   endTime: ''
+    // }],
     id:''
 
   },
@@ -62,22 +62,22 @@ Page({
             }
           });
           //发送请求查询今日待办中已完成的任务
-          wx.request({
-            url: host + '/task/todayTask?status=1',
-            header: header,
-            dataType: 'json',
-            method: 'GET',
-            success: function (res) {
+          // wx.request({
+          //   url: host + '/task/todayTask?status=1',
+          //   header: header,
+          //   dataType: 'json',
+          //   method: 'GET',
+          //   success: function (res) {
 
-              console.log(res.data)
-              // 把要传递的json对象转换成字符串
-              var taskInfo = res.data;
-              console.log(taskInfo);
-              that.setData({
-                taskInfo1: taskInfo
-              });
-            }
-          });
+          //     console.log(res.data)
+          //     // 把要传递的json对象转换成字符串
+          //     var taskInfo = res.data;
+          //     console.log(taskInfo);
+          //     that.setData({
+          //       taskInfo1: taskInfo
+          //     });
+          //   }
+          // });
           
 
         }
@@ -190,5 +190,5 @@ Page({
       }
     })
     
-  }
+  },
 })

@@ -94,39 +94,40 @@ Page({
     var user=wx.getStorageSync("user");
 
     console.log(that.data.fromPeople+"jjjjjjjjjjjjj"+user.username);
-    if(that.data.fromPeople==user.username){
-      that.setData({
-        ilist :['确认完成', '删除任务']
-      });
+    // if(that.data.fromPeople==user.username){
+    //   that.setData({
+    //     ilist :['确认完成', '删除任务']
+    //   });
     
-    }else{
-      that.setData({
-        ilist: ['确认完成']
-      });
-    }
+    // }else{
+    //   that.setData({
+    //     ilist: ['确认完成']
+    //   });
+    // }
+
     wx.showActionSheet({
       itemList: that.data.ilist,
       itemColor: "#CED63A",
       success: function (res) {
+      
         if (!res.cancel) {
-          if (res.tapIndex == 1) {
-            that.chooseMenu('删除任务')
-          } else {
-            that.chooseMenu('确认完成')
-          }
-        }
+          var typeOp=that.data.ilist[res.tapIndex];
+          that.chooseMenu(typeOp);
+            // that.chooseMenu('确认完成')
       }
+    }
     })
   },
 
   chooseMenu: function (type) {
     var that=this;
+    console.log(type);
     if(type=='删除任务'){
       //删除任务
       wx.request({
         url: host + '/task/delete/'+that.data.id,
         dataType: 'text',
-        method: 'delete',
+        method: 'PUT',
         header, header,
         success: function (res) {
             if(res.data=="no_login"){
@@ -138,13 +139,11 @@ Page({
               wx.showToast({
                 title: '删除成功',
               })
+
               wx.navigateBack({
-                url: '/pages/task/taskIndex/taskIndex',
+                delta: 2
               })
-                wx.redirectTo({
-                  url: '/pages/task/taskIndex/taskIndex',
-                })
-            }
+          }
         }
       });
     }
@@ -162,15 +161,12 @@ Page({
             })
           }
           else if (res.data == "true") {
-            wx.showToast({
-              title: '删除成功',
-            })
+
             wx.navigateBack({
-              url: '/pages/task/taskIndex/taskIndex',
+              delta:2,
             })
-            wx.redirectTo({
-              url: '/pages/task/taskIndex/taskIndex',
-            })
+
+         
           }
         }
       });
@@ -210,14 +206,51 @@ Page({
         var users = res.data.t_toUserList;
         var user=wx.getStorageSync("user");
         wx.setStorageSync("toUserList", res.data.t_toUserList);
-        //如果
+        
         console.log(users);
+        //记录完成任务人数
+        var count=0;   
+        //遍历接收人列表
         for (var i = 0; i < users.length; i++) {
-            if(users[i].eid==user.eid && users[i].status==1){
+           //如果任务已完成
+          if (users[i].status == 1) {
+            count++;
+             //如果接收人列表中是我，则隐藏底部导航
+            if (users[i].eid == user.eid) {
               that.setData({
-                completeTab:0
+                completeTab: 1  
               })
             }
+          }   
+          //如果任务未完成
+          else if (users[i].status == 0) {
+            //如果接收人列表中有我，则显示底部导航
+            if (users[i].eid == user.eid) {
+              that.setData({
+                completeTab: 0,
+                ilist: ['确认完成']
+              })
+            }
+          }
+        }
+
+
+        //如果发送人是我
+        if(user.username==res.data.t_fromUser){
+          //如果所有负责人的任务已完成
+          if (count==users.length) {
+            that.setData({
+              completeTab: 0,
+              ilist: ['删除任务']
+            })
+          }
+          //如果有负责人没完成任务
+          else {
+            that.setData({
+              completeTab: 0,
+              ilist: ['确认完成','删除任务']
+            })
+          }
         }
         var file = JSON.parse(res.data.t_file);
         var imgs=file.image;

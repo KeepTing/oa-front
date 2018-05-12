@@ -18,8 +18,8 @@
     <view class='input' style='text-align:right;'>
    {{topeople}}
    </view>
-      <input name='r_toid' hidden='hidden' value='{{toid}}' style='width:2%;'/>
-      <input name='type' hidden='hidden' value='0' style='width:2%;'/>
+      <!-- <input name='r_toid' hidden='hidden' value='{{toid}}' style='width:2%;'/>
+      <input name='type' hidden='hidden' value='0' style='width:2%;'/> -->
   </view>
   <view class='spilt'></view>
    <view class='box'>

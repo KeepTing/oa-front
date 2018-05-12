@@ -21,6 +21,7 @@ Page({
       topic: '',
       date: '9'
     }],
+    n_id:'',
     title:'',
     fromPeople:'',
     toPeople:'',
@@ -133,7 +134,39 @@ Page({
       success: function (res) {
         if (!res.cancel) {
           if (res.tapIndex == 0) {
-            that.chooseMenu('删除公告')
+          wx.showModal({
+            title: '提示',
+            content: '确认删除公告',
+            success:function(res){
+                if(res.confirm){
+                  //删除公告
+                  wx.request({
+                    url: host + '/notice/delete/' + that.data.n_id,
+                    method: 'PUT',
+                    header: header,
+                    dataType: "text",
+                    success: function (res) {
+                      console.log(res.data)
+                      if (res.data == "true") {
+                        wx.showToast({
+                          title: '删除成功',
+                        })
+
+                        wx.navigateBack({
+                          delta: 1
+                        })
+                      }
+                      else if (res.data == "no_login") {
+                        wx.redirectTo({
+                          url: '/pages/login/login',
+                        })
+                      }
+                    }
+                  })
+                }
+            }
+          })
+           
           } else if (res.tapIndex == 1) {
             wx.navigateTo({
               url: '/pages/notice/selectedList/selectedList',
@@ -156,6 +189,9 @@ Page({
     var that = this;
     console.log("公告id" + e.noticeid);
     
+    that.setData({
+      n_id:e.noticeid
+    })
     var user = wx.getStorageSync("user");
     if (user != null) {
       if (user.role == 0 || user.role == 1) {
@@ -263,9 +299,6 @@ Page({
         }
 
         wx.setStorageSync("toUserList", toUserList);
-        wx.showToast({
-          title: '已读',
-        })
       }
     })
   

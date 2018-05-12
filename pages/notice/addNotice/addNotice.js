@@ -190,7 +190,9 @@ Page({
   },
   onLoad: function (e) {
     var that = this;
-
+    that.setData({
+      idList: wx.getStorageSync('totalUserIdList')
+    })
     wx.setNavigationBarTitle({
       title: '新建公告',
     })
@@ -205,30 +207,48 @@ Page({
   //添加公告
   formSubmit: function (e) {
     var that = this;
-
-    var formData = e.detail.value; //获取表单所有input的值
-    console.log("dsfsdfdsf" + JSON.stringify(formData));
-    //发送请求添加任务
-    wx.request({
-      url: host + '/notice/add/',
-      data: formData,
-      dataType: 'json',
-      method: 'POST',
-      header: header,
-      success: function (res) {
-        if (JSON.stringify(res.data) == 'true') {
-          wx.navigateBack({
-            url: '/pages/notice/noticeItems/noticeItems'
-          })
-          wx.redirectTo({
-            url: '/pages/notice/noticeItems/noticeItems'
-          })
-          //console.log("水电费水电费");
+    e.detail.value.n_toid = wx.getStorageSync('totalUserIdList') + "";
+    if (e.detail.value.n_title==""){
+      wx.showToast({
+        icon:"none",
+        title: '请输入标题',
+      })
+    } else if (e.detail.value.n_toid == "") {
+      wx.showToast({
+        icon: "none",
+        title: '请选择发送人',
+      })
+    }
+    else if (e.detail.value.n_desc == "") {
+      wx.showToast({
+        icon: "none",
+        title: '请填写内容',
+      })
+    }else{
+     
+      var formData = e.detail.value; //获取表单所有input的值
+      console.log("dsfsdfdsf" + JSON.stringify(formData));
+      //发送请求添加任务
+      wx.request({
+        url: host + '/notice/add/',
+        data: formData,
+        dataType: 'json',
+        method: 'POST',
+        header: header,
+        success: function (res) {
+          if (JSON.stringify(res.data) == 'true') {
+            wx.navigateBack({
+              delta: 1
+            })
+            //console.log("水电费水电费");
+          }
+          console.log(res.data)
         }
-        console.log(res.data)
-      }
-    })
+      })
 
+
+    }
+    
 
   },
 
@@ -274,7 +294,7 @@ Page({
             title: '上传完成',
           });
 
-          this.setData({
+          that.setData({
             // imgUrl: JSON.stringify(wx.getStorageSync("imgs")),
             imgUrl: wx.getStorageSync("imgppp"),
             idList: wx.getStorageSync('totalUserIdList')

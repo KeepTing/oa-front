@@ -34,7 +34,7 @@ Page({
   addDirectory:function(e){
     wx.addPhoneContact({
       firstName:this.data.name,   //名字
-      mobilePhoneNumber: '123',    //手机号
+      mobilePhoneNumber: this.data.phoneNum,    //手机号
       success: function () {
         console.log('添加成功')
       }

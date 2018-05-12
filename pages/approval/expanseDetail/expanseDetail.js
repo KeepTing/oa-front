@@ -127,7 +127,7 @@ Page({
           wx.request({
             url: host + '/reimburse/delete/' + that.data.re_id,
             header: header,
-            method: 'DELETE',
+            method: 'PUT',
             dataType: 'text',
             success: function (res) {
               var result = res.data;

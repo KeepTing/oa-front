@@ -127,7 +127,7 @@ _delete:function(){
         wx.request({
           url: host + '/offwork/delete/' + that.data.o_id,
           header: header,
-          method: 'DELETE',
+          method: 'PUT',
           dataType: 'text',
           success: function (res) {
             var result = res.data;

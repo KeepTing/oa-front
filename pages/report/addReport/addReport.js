@@ -51,7 +51,8 @@ Page({
   //提交表单数据
   formSubmit: function (e) {
     var that = this;
-    // e.detail.value.topeople=that.data.topeople;
+    e.detail.value.r_toid=that.data.toid;
+    e.detail.value.type = 0;
     e.detail.value.timeRange = that.data.array[that.data.index];
     var formData = e.detail.value; //获取表单所有input的值
     console.log(formData);
@@ -71,8 +72,8 @@ Page({
             })
           }
           else if (result == "true") {
-            wx.redirectTo({
-              url: '/pages/report/reportItems/reportItems',
+            wx.navigateBack({
+              delta:2
             })
           }
         }

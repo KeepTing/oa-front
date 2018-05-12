@@ -58,7 +58,7 @@ Page({
                     data: res.data.user,
                   })
                   wx.switchTab({
-                    url: "../index/index"
+                    url: "/pages/index/index"
                   })
                 }, 2000) //延迟时间 
               }

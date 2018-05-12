@@ -50,7 +50,7 @@
 <view class='blockw'>审批流程</view>
 <view class='box'>
   <view class='box-sp'>
-    <image src='{{src}}'></image>
+    <image src='{{toHeadImg}}'></image>
     <text>{{toname}}</text>
     <text>{{array1[status]}}</text>
   </view>

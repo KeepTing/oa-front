@@ -11,8 +11,8 @@
    <view class='box'>
     <text class="c-gray iconuser"></text>
     <text class='title'>公告范围</text>
-    <view class='input'>
-    <input name='noticeToUser' hidden='hidden' /> 
+    <view class='input' bindtap='clickto'>
+    <input name='noticeToUser' hidden='hidden' style='width:2px;' /> 
     </view>
     <view bindtap='clickto'>
      <text class='btnstaff iconplex'></text>
@@ -23,9 +23,9 @@
     <text class="c-gray iconclock"></text>
     <text class='title'>公示期至</text>
     <view class='input'>
-      <picker name='pubTime' mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <picker name='pubTime' mode="date" value="{{date}}"  bindchange="bindDateChange">
         <view class="picker">
-          {{date}} 23:59
+          {{date}} 
         </view>
        </picker>
        
